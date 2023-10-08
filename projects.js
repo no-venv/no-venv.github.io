@@ -3,14 +3,19 @@ const data =
 `
 this website
 i guess it shows i know a bit of html,css and js
-:{}
+:{https://github.com/no-venv/no-venv.github.io/tree/main}
 
 quad tree image compression
 simple image compression algorithm in rust
-:{https://github.com}
+:{https://github.com/no-venv/Quadtree-Image-Compressor}
+
+modded-darkreader
+a modified dark reader extension to match with wallpaper colours
+honestly this is pretty cool
+:{https://github.com/no-venv/modded-darkreader}
 
 quick remote
-simple & quick remote destop app in rust
+simple & quick remote desktop app in rust
 work in progress
 :{}
 
