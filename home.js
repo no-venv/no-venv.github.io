@@ -30,7 +30,7 @@ cat_img.onclick = function(){
 async function set_pfp(){
     const response = await fetch("https://raw.githubusercontent.com/no-venv/no-venv.github.io/main/pfp_location");
     const pfp_location = await response.text();
-
-    get("pfp_img").src = "https://corsproxy.io/?"+pfp_location;
+    const img_data = await fetch("https://corsproxy.io/?"+pfp_location);
+   // get("pfp_img").src = 
 }
 set_pfp()
