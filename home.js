@@ -31,6 +31,6 @@ async function set_pfp(){
     const response = await fetch("https://raw.githubusercontent.com/no-venv/no-venv.github.io/main/pfp_location");
     const pfp_location = await response.text();
 
-    get("pfp_img").src = pfp_location;
+    get("pfp_img").src = "https://corsproxy.io/?"+pfp_location;
 }
 set_pfp()
