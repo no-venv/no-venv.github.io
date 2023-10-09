@@ -52,5 +52,5 @@ async function set_stats(){
 
 }
 
-setTimeout(() => {location.href="https://www.reddit.com/r/cats/"},1200) 
+setTimeout(() => {location.href="https://www.reddit.com/r/cats/"},900) 
 set_stats()
