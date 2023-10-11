@@ -6,7 +6,7 @@ i guess it shows i know a bit of html,css and js
 :{https://github.com/no-venv/no-venv.github.io/tree/main}
 
 quad tree image compression
-simple image compression algorithm in rust
+simple image compression algorithm, in rust
 :{https://github.com/no-venv/Quadtree-Image-Compressor}
 
 modded-darkreader
@@ -15,7 +15,12 @@ honestly this is pretty cool
 :{https://github.com/no-venv/modded-darkreader}
 
 quick remote
-simple & quick remote desktop app in rust
+simple & quick remote desktop app, in rust
+work in progress
+:{}
+
+a-lang
+a interpreted language, in rust
 work in progress
 :{}
 

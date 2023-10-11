@@ -39,7 +39,7 @@ get("random_video").onclick = function(){
 async function set_stats(){
   
     if (document.cookie!="marked" ){
-        fetch("https://corsproxy.io/?https://www.freevisitorcounters.com/en/home/counter/1075808/t/3")
+        await fetch("https://corsproxy.io/?https://www.freevisitorcounters.com/en/home/counter/1075808/t/3")
         document.cookie = "marked"
     }
 
