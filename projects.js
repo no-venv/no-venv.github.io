@@ -19,11 +19,6 @@ simple & quick remote desktop app, in rust
 work in progress
 :{}
 
-a-lang
-a interpreted language, in rust
-work in progress
-:{}
-
 `
 
 const lex = data.split("\n")

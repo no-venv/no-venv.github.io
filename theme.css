@@ -15,7 +15,6 @@
     background-color: rgb(0, 0, 0, 0);
     height: 100%;
     border: none;
-    
     border-radius: 8px;
     border-color: rgb(255, 0, 128) !important;
   }
@@ -36,6 +35,10 @@
   .vbox {
     display: flex;
     flex-direction: column;
+  }
+
+  .centered {
+    align-items: center;
   }
 
   .hbox {
