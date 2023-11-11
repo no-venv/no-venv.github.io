@@ -56,4 +56,4 @@ async function set_stats(){
 
 }
 
-//set_stats()
+set_stats()
