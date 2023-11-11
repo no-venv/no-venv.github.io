@@ -24,7 +24,8 @@
   }
   
   img {
-    height: 100%;
+    max-width: 100%;
+
     padding: 4px 4px 4px 4px;
   }
 
@@ -37,8 +38,12 @@
     flex-direction: column;
   }
 
+  .vbox * {
+    margin: 0px 0px 24px 0px;
+  }
+
   .centered {
-    align-items: center;
+    justify-content: center;
   }
 
   .hbox {

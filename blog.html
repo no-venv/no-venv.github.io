@@ -1,17 +1,19 @@
-<div class="vbox background blur _8px_box_pad">
+<div class="vbox background blur ">
 
-    <div>
+    <div id="blog_list" class="_8px_box_pad">
 
-        <h1>blog stuff</h1>
+        <div class="hbox">
+            <h1>blog stuff</h1>
+            <input class="farleft background">
+        </div>
 
-        <p>hi</p>
-        
         <div id="project_list" class="hbox img16_9 centered">
 
             <div style="display: none;" class="proj_temp light vbox background projects_box project_btn"> 
-
+            
+                <p class="date" style="font-size: 14px !important"> simple image compression algorithm in rust</p>
                 <h2 class="">quad tree image compression</h2>
-                <p class=""> simple image compression algorithm in rust</p>
+                <p class="desc"> simple image compression algorithm in rust</p>
                 
                 <button>read!</button>
             </div>
@@ -20,7 +22,9 @@
 
     </div>
 
-</div>
+    <div id="blog_view" style="margin: 10px 24px 10px 8px;">
 
-<script src="blog.js"></script>
+    </div>
+</div>
 <script src="showdown.js"></script>
+<script src="blog.js"></script>
