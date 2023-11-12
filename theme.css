@@ -162,10 +162,10 @@
   }
 
   #main_container > div{
-    width: 800px;
+    width: 850px;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 850px) {
     #backdrop {
         padding: 0px 0px 0px 0px;
     }
