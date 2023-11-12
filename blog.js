@@ -20,6 +20,10 @@ async function populate(element){
     let date = new Date(meta_text[2]).toDateString()
     let tags = meta_text[3]
 
+    if (tags == "hide"){
+        return;
+    }
+
     let clone = proj_temp.clone();
     let btn = clone.find("button")
     
