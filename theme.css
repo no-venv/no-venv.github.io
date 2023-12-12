@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Dosis';
+  src: url("font/Dosis/Dosis-VariableFont_wght.ttf");
+}
 * {
     color: white;
     font: 1rem Verdana, sans-serif;
@@ -15,12 +19,12 @@
     background-color: rgb(0, 0, 0, 0);
     height: 100%;
     border: none;
-    border-radius: 8px;
+    border-radius: 24px;
     border-color: rgb(255, 0, 128) !important;
   }
 
   button:hover{
-    border: dashed 3px;
+    border: solid 2px;
   }
   
   img {
@@ -30,7 +34,7 @@
   }
 
   .blur {
-    backdrop-filter: blur(35px);
+    backdrop-filter: blur(64px);
   }
   
   .vbox {
@@ -76,11 +80,11 @@
   }
   .background , img {
   
-    background-color: rgba(145, 100, 100, 0.25);
-    border-radius: 16px;
-    border-style: dashed;
-    border-color: rgba(255, 255, 255, 0.25);
-    border-width: 4px;
+    background-color: rgba(0, 0, 0, 0.29);
+    border-radius: 24px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.211);
+    border-width: 2px;
   }
   
   .light{
@@ -178,10 +182,15 @@
   #navbar {
     min-height: 44px;
     height: 44px;
-    padding: 0px 16px 0px 16px;
+    --margin: 24px 24px 24px 24px;
+    --padding: 0px 16px 0px 16px;
     box-sizing: border-box;
   }
   
+  #navbar *{
+    padding: 0px 4px 0px 4px;
+  }
+
   #main {
     display: flex;
   }
@@ -198,8 +207,12 @@
   }
   
   #cat_img {
-
    -items: center;
+  }
+
+  #pfp_img{
+    border-radius: 128px;
+    border-style: solid;
   }
 
   #pfp{
