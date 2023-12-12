@@ -4,15 +4,15 @@
 }
 * {
     color: white;
-    font: 1rem Verdana, sans-serif;
+    font: 1rem Dosis, sans-serif;
   }
   
   h1 {
-    font: 2.15rem Verdana, sans-serif;
+    font: 2.15rem Dosis, sans-serif;
   }
   
   h2 {
-    font: 1.5rem Verdana, sans-serif !important;
+    font: 1.5rem Dosis, sans-serif !important;
   }
   
   button {
@@ -166,10 +166,10 @@
   }
 
   #main_container > div{
-    width: 850px;
+    width: 600px;
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 600px) {
     #backdrop {
         padding: 0px 0px 0px 0px;
     }
