@@ -11,38 +11,39 @@ $("#content").load("page_home.html")
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
-
-function lp(page){
-    $("#content").load(page+".html")
 }
 
-function get(element){
-    return $("#"+element)[0]
+function lp(page) {
+    $("#content").load(page + ".html")
 }
 
-get("home").onclick = function(){
-    lp("page_home")}
+function get(element) {
+    return $("#" + element)[0]
+}
 
-get("projects").onclick = function(){
+get("home").onclick = function () {
+    lp("page_home")
+}
+
+get("projects").onclick = function () {
     lp("projects")
 }
 
-get("wallpaper").onclick = function(){
-    location.href = "background/video.mp4"
+get("wallpaper").onclick = function () {
+    location.href = "background/wallpaper.jpg"
 }
 
-get("random_video").onclick = function(){
+get("random_video").onclick = function () {
     location.href = cat_videos[getRandomInt(cat_videos.length)]
 }
 
-get("blog").onclick = function(){
+get("blog").onclick = function () {
     lp("blog")
 }
 
-async function set_stats(){
-  
-    if (document.cookie!="marked" ){
+async function set_stats() {
+
+    if (document.cookie != "marked") {
         await fetch("https://corsproxy.io/?https://www.freevisitorcounters.com/en/home/counter/1075808/t/3")
         document.cookie = "marked"
     }

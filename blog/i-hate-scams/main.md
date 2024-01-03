@@ -1,4 +1,4 @@
-# THEY. JUST. WONT. STOP.
+# they just will not stop
 
 ### and no matter what i try to do, they keep on messaging me on different numbers
 
