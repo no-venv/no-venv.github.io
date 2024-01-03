@@ -34,28 +34,26 @@ if it’s a desktop, then i’m redirected to google. this is very simple to byp
 
 **(also, some of these sites DO check the monitor resolution to also determine if it’s being visited by a desktop, again, bypassable by resizing the browser window.)**
 
-
-![image](image-1.png)
+<center>![image](blog/i-hate-scams/image-1.png)</center>
 
 once i set the user agent, i am allowed in.. and they ALWAYS use the same bloody captcha system i swear to god..
 
-![image](image-2.png)
+<center>![image](blog/i-hate-scams/image-2.png)</center>
+
 
 you see, this is what i mean about these websites being very convincing
 
 
-![image](image-3.png)
-![image](image-5.png)
+<center>![image](blog/i-hate-scams/image-3.png)</center>
+<center>![image](blog/i-hate-scams/image-5.png)</center>
 
-###
+**[at exactly 2:06 am, the website shutdown as while writing this blog post.. and it’s back up again at 2:08 am.. is someone ddosing the website for me lol???]**
 ---
-### [meta] **[at exactly 2:06 am, the website shutdown as while writing this blog post.. and it’s back up again at 2:08 am.. is someone ddosing the website for me lol???]**
----
-###
 
-the network traffic is rather interesting, take a look:
+the network traffic is interesting, take a look:
 
-![image](image-6.png)
+
+<center>![image](blog/i-hate-scams/image-6.png)</center>
 
 Action.. Active.. Action.. Active.. 
 
@@ -63,12 +61,14 @@ these requests are both done on intervals of about 1 second. they are basically 
 
 i noticed some website elements do not function, like the language switcher.. giveway that this is fake
 
-![image](image-7.png)
+
+<center>![image](blog/i-hate-scams/image-7.png)</center>
 
 
 don’t be fooled, we’re not at the ACTUAL CIBC login page, in fact! we're still on the scam website, just that we're on a subpage
 
-![image](image-8.png)
+
+<center>![image](blog/i-hate-scams/image-8.png)</center>
 
 
 and let me tell you, this is the most ADVANCED phishing page, i’ve ever looked at. they DO check if the card is vaild in REAL time and they also send your information to the scammers in REAL time. 
@@ -76,29 +76,30 @@ and let me tell you, this is the most ADVANCED phishing page, i’ve ever looked
 <center> post requests of current login data:</center>
 
 
-![image](image-10.png)
+<center>![image](blog/i-hate-scams/image-10.png)</center>
 
-
-![image](image-11.png)
+<center>![image](blog/i-hate-scams/image-11.png)</center>
 
 
 see, i can’t “sign on” because card is obviously bogus, the card got sent to the scammer's server anyway..
 
-![image](image-12.png)
+
+<center>![image](blog/i-hate-scams/image-12.png)</center>
 
 
 the verification system is using something called the "Luhn Algorithm”
 
 how did i know, well i did a peek into the websites javascript.. which is surprisingly not obfuscated!
 
-![image](image-13.png)
+<center>![image](blog/i-hate-scams/image-13.png)</center>
+
 
 
 (the code is literally copied from a stackoverflow answer lmao)
 https://stackoverflow.com/questions/12310837/implementation-of-luhn-algorithm
 
-![image](image-14.png)
 
+<center>![image](blog/i-hate-scams/image-14.png)</center>
 
 
 # blowing up the servers
@@ -107,15 +108,17 @@ since these websites do NOT have any sort of ddos protection, it’s actually ea
 
 LITERALLY what i’m doing is just sending repeated requests to the server using curl across multiple processes. 
 
-![image](image-15.png)
+
+<center>![image](blog/i-hate-scams/image-15.png)</center>
 
 <center>the server begins to die</center>
 
-![image](image-16.png)
+<center>![image](blog/i-hate-scams/image-16.png)</center>
+
 
 <center>painfully</center>
 
-![image](image-17.png)
+<center>![image](blog/i-hate-scams/image-17.png)</center>
 
 hopefully, they enjoy the bougs login information flooding their telegram 
 
