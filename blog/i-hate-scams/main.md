@@ -15,7 +15,8 @@ in fact, it’s SUCH a common issue nowadays that there's like reddit posts abou
 
 and those phishing websites are so convincing, right down to a tee they managed to scrape the css, html for popular banking websites. even the url looks sort of convincing!!
 
-![image](image.png)
+<center>![image](blog/i-hate-scams/image.png)</center>
+
 
 anyways, venture with me to discover how these websites work and the eventual destruction i’ll impose on them
 
