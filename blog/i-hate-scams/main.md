@@ -96,7 +96,8 @@ how did i know, well i did a peek into the websites javascript.. which is surpri
 
 
 (the code is literally copied from a stackoverflow answer lmao)
-https://stackoverflow.com/questions/12310837/implementation-of-luhn-algorithm
+
+[the stackoverflow answer](https://stackoverflow.com/questions/12310837/implementation-of-luhn-algorithm)
 
 
 <center>![image](blog/i-hate-scams/image-14.png)</center>
@@ -120,6 +121,6 @@ LITERALLY what i’m doing is just sending repeated requests to the server using
 
 <center>![image](blog/i-hate-scams/image-17.png)</center>
 
-hopefully, they enjoy the bougs login information flooding their telegram 
+hopefully they enjoy the bougs login information flooding their telegram 
 
 maybe they'll stop messaging me? who knows
