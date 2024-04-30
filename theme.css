@@ -5,6 +5,7 @@
 * {
     color: white;
     font: 1rem Dosis, sans-serif;
+    
   }
   
   .coding_img >div>img{
@@ -103,9 +104,9 @@
   }
   .background , img {
     background-color: rgba(0, 0, 0, 0.322);
-    border-radius: 24px;
+    border-radius: 8px;
     border-style: solid;
-    border-color: rgba(255, 255, 255, 0.829);
+    border-color: rgba(255, 255, 255, 0.35);
     border-width: 2px;
   }
   
@@ -114,6 +115,7 @@
     border-style: 2px;
   }
   ._8px_pad>div {
+    
     margin: 0px 0px 24px 0px;
   }
   
@@ -163,9 +165,8 @@
 
     display: flex;
     align-items: center;   
-    height: 100%;
-   
- 
+    height: 100%; 
+    
   }
 
   #inner{
@@ -184,8 +185,6 @@
     display: flex;
     align-items: center;   
     flex-direction: column;
-
-    
   }
 
   #main_container > div{
@@ -238,7 +237,7 @@
   }
 
   #pfp_img{
-    border-radius: 128px;
+    border-radius: 9999px;
     border-style: solid;
   }
 
