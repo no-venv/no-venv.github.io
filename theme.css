@@ -58,7 +58,7 @@
   }
 
   .blur {
-    backdrop-filter: blur(64px);
+    backdrop-filter: blur(6px);
   }
   
   .vbox {
@@ -104,7 +104,7 @@
   }
   .background , img {
     background-color: rgba(0, 0, 0, 0.322);
-    border-radius: 8px;
+    border-radius: 32px;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.35);
     border-width: 2px;
@@ -112,7 +112,7 @@
   
   .light{
     background-color: rgba(0, 0, 0, 0.234);
-    border-style: 2px;
+    border-style: 12px;
   }
   ._8px_pad>div {
     
@@ -250,10 +250,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     top:0%;
     left:0%;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
   }
 
