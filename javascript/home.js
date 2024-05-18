@@ -33,7 +33,7 @@ function get_image() {
     if (!image) {
         return;
     }
-    image.attr("src", `https://cataas.com/cat?${Date.now()}`);
+    image.attr("src", `https://corsproxy.io/?https://cataas.com/cat?${Date.now()}`);
     image.one("load",function(){
         $("#cat_img_load").hide()
         image.css("visibility","")

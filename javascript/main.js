@@ -36,9 +36,9 @@ get("random_video").onclick = function () {
     location.href = cat_videos[getRandomInt(cat_videos.length)]
 }
 
-get("blog").onclick = function () {
-    lp("blog")
-}
+// get("blog").onclick = function () {
+//     lp("blog")
+// }
 
 
 async function set_stats() {
