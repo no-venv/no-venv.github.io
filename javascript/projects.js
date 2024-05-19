@@ -15,7 +15,7 @@ honestly this is pretty cool
 :{https://github.com/no-venv/modded-darkreader}
 
 my roblox scripts
-a collection of basmy roblox modules/scripts 
+a collection of my roblox modules/scripts 
 :{https://github.com/no-venv/Roblox}
 `
 
