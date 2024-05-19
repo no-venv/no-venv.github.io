@@ -1,4 +1,3 @@
-var home_init = true;
 var touch = [
     "i told u not to touch it",
     "stop touching my cats",
@@ -28,10 +27,13 @@ cat_img.onclick = function () {
 
 }
 
+
 function get_image() {
+
     let image = $("#cat_img_output")
     let uri = ""
     if (!image) {
+        setTimeout(get_image,5000)
         return;
     }
 
@@ -53,5 +55,7 @@ function get_image() {
    
 }
 
-get_image();
-
+if (!get_image_on){
+    var get_image_on = true;
+    get_image();
+}

@@ -1,7 +1,7 @@
 (function (){
 const data =
 `
-this website
+this website (horrible frontend)
 i guess it shows i know a bit of html,css and js
 :{https://github.com/no-venv/no-venv.github.io/tree/main}
 
