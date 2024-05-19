@@ -36,6 +36,13 @@ get("random_video").onclick = function () {
     location.href = cat_videos[getRandomInt(cat_videos.length)]
 }
 
+get("hamburger_button").onclick = function(){
+    $("#navbar").one("click",function(){
+        $("#navbar").css("visibility","")
+    })
+    $("#navbar").css("visibility","visible")
+}
+
 // get("blog").onclick = function () {
 //     lp("blog")
 // }
