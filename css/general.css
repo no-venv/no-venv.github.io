@@ -46,25 +46,6 @@ transition canvas {
     height: 850px;
 }
 
-@media (max-width:850px) {
-    crt_mask {
-        width: 100% !important;
-        height: 100% !important;
-        mask-image: unset !important;
-    }
-
-    transition canvas {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    transition container {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-}
-
 app_content {
     display: block;
     overflow-y: scroll;
@@ -134,4 +115,23 @@ button {
 
 button:hover {
     color: #ff00ee !important;
+}
+
+@media screen and (max-width:850px) {
+    crt_mask {
+        width: 100% !important;
+        height: 100% !important;
+        mask-image: unset !important;
+    }
+
+    transition canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    transition container {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
 }
