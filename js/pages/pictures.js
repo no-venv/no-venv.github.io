@@ -12,35 +12,28 @@ const ROOT_URL = "/images/photography";
 const BACKDROP = "/images/photography/wallpaper.png";
 class Gallary {
     EndOfPage() {
-        // let scroll_offset = (this.html_container.scrollTop + this.html_container.offsetHeight)
-        //Math.abs(element.scrollHeight - element.clientHeight - element.scrollTop) <= 1;
-        // console.log(this.html_container.scrollTop,this.html_container.scrollHeight)
-        console.log(this.html_container.scrollHeight, this.html_container.clientHeight, this.html_container.scrollTop);
+        // console.log(
+        //     this.html_container.scrollHeight,
+        //     this.html_container.clientHeight,
+        //     this.html_container.scrollTop
+        // )
         return Math.abs(this.html_container.scrollHeight - this.html_container.clientHeight - this.html_container.scrollTop) <= 1;
-    }
-    Show() {
-        PICTURE_PAGE.appendChild(this.html_container);
-        this.FetchPictures();
-    }
-    Hide() {
-        PICTURE_PAGE.removeChild(this.html_container);
     }
     NextPicture() {
         let _this = this;
         let thumbnail = `${this.URL}/thumbnails/${this.picture_cursor}.jpg`;
         let picture = `${this.URL}/${this.picture_cursor}.jpg`;
-        console.log(this.picture_cursor);
+        let dither_container = document.createElement("dither");
+        this.html_container.appendChild(dither_container);
+        this.picture_cursor -= 1;
         return fetch(thumbnail).then(function (response) {
             if (!(response.status == 200)) {
-                // do not do anything
-                console.log("reached end");
-                _this.reached_end = true;
+                // remove element
+                dither_container.remove();
                 return false;
             }
-            let dither_container = document.createElement("dither");
             let new_image = new Image();
             new_image.src = thumbnail;
-            new_image = new_image;
             function OnClickExit() {
                 Transition(function () {
                     new_image.src = thumbnail;
@@ -64,8 +57,6 @@ class Gallary {
             }
             dither_container.appendChild(new_image);
             dither_container.addEventListener("click", OnClick);
-            _this.html_container.appendChild(dither_container);
-            _this.picture_cursor -= 1;
             return true;
         });
     }
@@ -87,18 +78,27 @@ class Gallary {
             });
         }
         else {
-            function OnNewPicture(success) {
-                var _a;
-                //    console.log(_this.EndOfPage())
-                if (_this.EndOfPage() && success && !_this.reached_end) {
-                    (_a = _this.NextPicture()) === null || _a === void 0 ? void 0 : _a.then(OnNewPicture);
-                }
+            console.log(this.picture_cursor);
+            while (this.EndOfPage() && !(this.picture_cursor == -1)) {
+                this.NextPicture();
             }
-            OnNewPicture(true);
+            // function OnNewPicture(success : boolean | undefined){
+            //     if (_this.EndOfPage() && success && !_this.reached_end){
+            //         _this.NextPicture()?.then(OnNewPicture)
+            //     }
+            // }
+            // OnNewPicture(true)
         }
     }
+    Show() {
+        PICTURE_PAGE.appendChild(this.html_container);
+        this.FetchPictures();
+    }
+    Hide() {
+        PICTURE_PAGE.removeChild(this.html_container);
+    }
     constructor(group) {
-        this.picture_cursor = 0;
+        this.picture_cursor = -1;
         this.got_stamp = false;
         this.reached_end = false;
         this.URL = "";
