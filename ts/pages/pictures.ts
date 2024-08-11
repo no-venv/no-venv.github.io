@@ -14,13 +14,21 @@ class Gallary {
     // Class that handles fetching pictures from a specifed group
     // private html_container_node = PICTURE_CONTAINER_TEMPLETE.cloneNode(true)
     private html_container : HTMLElement
-    private picture_cursor = 1
+    private picture_cursor : number = 0;
+    private got_stamp = false;
     private reached_end = false
     private URL = ""
 
     private EndOfPage(){
-        let scroll_offset = (this.html_container.scrollTop + this.html_container.offsetHeight)
-        return scroll_offset >= (this.html_container.scrollHeight)
+        // let scroll_offset = (this.html_container.scrollTop + this.html_container.offsetHeight)
+        //Math.abs(element.scrollHeight - element.clientHeight - element.scrollTop) <= 1;
+        // console.log(this.html_container.scrollTop,this.html_container.scrollHeight)
+        console.log(
+            this.html_container.scrollHeight,
+            this.html_container.clientHeight,
+            this.html_container.scrollTop
+        )
+        return Math.abs(this.html_container.scrollHeight - this.html_container.clientHeight - this.html_container.scrollTop) <=1;
     }
     public Show() {
         PICTURE_PAGE.appendChild(this.html_container)
@@ -31,11 +39,11 @@ class Gallary {
     }
    
     private NextPicture() {
-  
-        let picture = `${this.URL}/${this.picture_cursor}.jpg`
         let _this = this
-
-        return fetch(picture).then(function (response) {
+        let thumbnail = `${this.URL}/thumbnails/${this.picture_cursor}.jpg`
+        let picture = `${this.URL}/${this.picture_cursor}.jpg`
+        console.log(this.picture_cursor)
+        return fetch(thumbnail).then(function (response) {
             if (!(response.status == 200)) {
                 // do not do anything
                 console.log("reached end")
@@ -44,13 +52,13 @@ class Gallary {
             }
 
             let dither_container = document.createElement("dither")
-
             let new_image = new Image()
-            new_image.src = picture
+            new_image.src = thumbnail
             new_image = new_image
 
             function OnClickExit(){
                 Transition(function(){
+                    new_image.src = thumbnail
                     PICTURE_PAGE.removeChild(PICTURE_VIEWER)
                     PICTURE_PAGE.appendChild(TOPBAR)
                     PICTURE_VIEWER.removeChild(new_image)
@@ -61,6 +69,7 @@ class Gallary {
 
             function OnClick(){
                 Transition(function(){
+                    new_image.src = picture
                     PICTURE_PAGE.appendChild(PICTURE_VIEWER)
                     PICTURE_PAGE.removeChild(TOPBAR)
                     dither_container.removeChild(new_image)
@@ -75,7 +84,8 @@ class Gallary {
             dither_container.addEventListener("click",OnClick)
 
             _this.html_container.appendChild(dither_container)
-            _this.picture_cursor+=1
+
+            _this.picture_cursor -=1
             return true
         })
 
@@ -83,13 +93,33 @@ class Gallary {
     }
     private FetchPictures(){
         let _this = this
-        function OnNewPicture(success : boolean | undefined){
-        
-            if (_this.EndOfPage() && success && !_this.reached_end){
-                _this.NextPicture()?.then(OnNewPicture)
+
+        if (!this.got_stamp){
+            fetch(`${this.URL}/stamp`).then(function(response){
+                
+                if (!(response.status == 200)){
+                    return
+                }
+                return response.text()
+            }).then(function(stamp){
+                if (!stamp){
+                    return
+                }
+                _this.got_stamp = true
+                _this.picture_cursor = parseInt(stamp)
+                _this.FetchPictures()
+            })
+
+        } else {
+            function OnNewPicture(success : boolean | undefined){
+            //    console.log(_this.EndOfPage())
+                if (_this.EndOfPage() && success && !_this.reached_end){
+                    _this.NextPicture()?.then(OnNewPicture)
+                }
             }
+            OnNewPicture(true)
         }
-        OnNewPicture(true)
+     
     }
     constructor(group: string) {
         this.URL = `${ROOT_URL}/${group}`
@@ -101,8 +131,7 @@ class Gallary {
 
         let _this = this
         this.html_container.addEventListener("scroll", function () {
-            _this.FetchPictures()
-           
+            _this.FetchPictures() 
         })
 
     }
@@ -126,16 +155,19 @@ PICTURE_PAGE.querySelectorAll("[link]").forEach(function (element) {
     element.addEventListener("click",OnClick)
 
     if (picture_group == "photos"){
-        new_gallary.Show()
         current_gallary = new_gallary
     }
 })
 
 
 
+// PICTURE_PAGE.addEventListener()
 let UI = GlobalAppManager.NewUITemplete()
 UI.OnCreate = function (show: string) {
     SetTransitionBackdrop(BACKDROP)
+}
+UI.OnVisible = function(){
+    current_gallary.Show()
 }
 UI.GUI = PICTURE_PAGE as HTMLAnchorElement
 

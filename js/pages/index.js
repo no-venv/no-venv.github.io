@@ -26,7 +26,7 @@ function set_stats() {
         let counter = responsehtml.split("<td>All</td>\n<td>")[1];
         let regex_counter = re.exec(counter);
         if (regex_counter) {
-            VISITOR_COUNTER.innerText = `${regex_counter[0]} visits`;
+            console.log(`${regex_counter[0]} visits`);
         }
     });
 }

@@ -5,6 +5,7 @@ const CURRENT_PAGE_PLACEHOLDER = {
         OnResume: () => { },
         OnDestroy: () => { },
         OnForeground: () => { },
+        OnVisible: () => { },
         GUI: NULL_ELEMENT,
         _Paused: false,
         _Name: ""
@@ -18,6 +19,18 @@ const TEMP_ELEMENT_HOLDER = (function () {
     document.body.appendChild(holder);
     return holder;
 })();
+function onVisible(element, callback) {
+    new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio > 0) {
+                callback(element);
+                observer.disconnect();
+            }
+        });
+    }).observe(element);
+    if (!callback)
+        return new Promise(r => callback = r);
+}
 export class AppManager {
     constructor() {
         this.current_page = CURRENT_PAGE_PLACEHOLDER;
@@ -130,6 +143,7 @@ export class AppManager {
         let routing_same_page = (previous_page.name == name);
         if (!routing_same_page) {
             let _this = this;
+            onVisible(next_page.GUI, next_page.OnVisible);
             this.animator(previous_page.ui, next_page, function () {
                 _this.navagate_debounce = false;
                 if (foreground) {
@@ -150,6 +164,7 @@ export class AppManager {
             OnResume: () => { },
             OnDestroy: () => { },
             OnForeground: () => { },
+            OnVisible: () => { },
             _Paused: false,
             GUI: NULL_ELEMENT,
             _Name: ""
