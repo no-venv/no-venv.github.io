@@ -78,16 +78,9 @@ class Gallary {
             });
         }
         else {
-            console.log(this.picture_cursor);
             while (this.EndOfPage() && !(this.picture_cursor == -1)) {
                 this.NextPicture();
             }
-            // function OnNewPicture(success : boolean | undefined){
-            //     if (_this.EndOfPage() && success && !_this.reached_end){
-            //         _this.NextPicture()?.then(OnNewPicture)
-            //     }
-            // }
-            // OnNewPicture(true)
         }
     }
     Show() {
