@@ -98,8 +98,7 @@ about_page button {
     border-radius: 32px;
 }
 
-
-@media screen and (max-width:850px) {
+@media (max-width:850px) {
     about_page about_me {
         width: 100%  !important;
         height: 80%;
