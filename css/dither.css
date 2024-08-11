@@ -1,0 +1,19 @@
+/* dither crt css */
+    /* sepia()  hue-rotate(70deg) */
+
+crt_mask {
+    mask-image: url("/images/mask.png");
+    mask-repeat: no-repeat;
+    mask-type: alpha; 
+    mask-size: cover;
+}
+
+/* dither {
+    filter:   brightness(1.05) contrast(3.5) saturate(1.1);
+    display: inline-block;
+    background: url(data:image/webp;base64,UklGRjAAAABXRUJQVlA4TCQAAAAvA8AAAIVS27ahb3uzOUmSJoqqrOq6P47of8DQdcprYdP8/VY=);
+}
+
+dither >*{
+    mix-blend-mode: soft-light;
+}  */

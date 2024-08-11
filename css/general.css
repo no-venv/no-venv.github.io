@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Cursive";
+    src: url("/fonts/cartograph-sans-cf.woff");
+}
+
+app {
+    display: flex;
+    width: inherit;
+    height: inherit;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    gap: 4px;
+}
+
+app > topbar{
+    z-index: 1000;
+}
+transition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+transition container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+
+}
+
+transition canvas {
+    grid-column: 1;
+    grid-row: 1;
+    object-fit: cover;
+    image-rendering: pixelated; 
+    width: 850px;
+    height: 850px;
+}
+
+@media (max-width:850px) {
+    crt_mask {
+        width: 100% !important;
+        height: 100% !important;
+        mask-image: unset !important;
+    }
+
+    transition canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    transition container {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+}
+
+app_content {
+    display: block;
+    overflow-y: scroll;
+    height: inherit;
+}
+
+crt_mask {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    display: grid;
+    width: 850px;
+    height: 850px;
+
+    /* min-width: 0; */
+}
+
+crt_mask>* {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 12px;
+}
+
+crt_mask>background {
+    filter: brightness(.8);
+    z-index: -100;
+}
+
+
+body {
+    /* align everthing to the center */
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+/* button{
+    border-radius: 4px;
+    border: solid 1px;
+    border-color: #b2d942 ;
+    background: none;
+    font-family: Kode Mono;
+    color: white;
+} */
+
+* {
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-family: "Cursive";
+    scrollbar-width: none
+}
+
+img {
+    object-fit: cover;
+    object-position: center;
+}
+
+button {
+    border: solid 0px;
+    background: none;
+    color: white;
+}
+
+button:hover {
+    color: #ff00ee !important;
+}

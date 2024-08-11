@@ -1,55 +1,53 @@
+<html>
+
 <head>
-  <link rel="stylesheet" href="theme.css">
-  <script src="javascript/jq.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/dither.css" />
+    <link rel="stylesheet" href="css/topbar.css" />
+
 </head>
+<body>
 
-<body style="background-color: rgba(0, 0, 0, 0) !important;">
+    <crt_mask>
+        
+        <app>
 
-  <!-- <video id="backdrop" src="background/video.mp4" autoplay loop muted></video> -->
-  <img id="backdrop" src="background/wallpaper.jpg"
-    style="padding: 0px 0px 0px 0px !important;  border: none !important; border-radius: 0 !important; ">
-  <div id="main_container" class="">
-    <div id="center_container">
+   
+            <topbar>
+                <button link="/about.html">about me</button>
+                <button link="/pictures.html">photography</button>
+                <button link="/projects.html">programming</button>
+                <button id="visitors">hey!</button>
+                <!-- <button id="btn_cat">meow</button> -->
 
-      <div id="inner" class="_8px_pad">
+            </topbar> 
+            
+            <transition id="transition_elm">
+                <container>
+                    <canvas id="transitionCanvas" width="850" height="850" data-textures="/images/textures/noise.png,/images/textures/dither_grid.png"></canvas>
+                </container>
+            </transition>
 
-        <div class="hbox">
-          <button id="hamburger_button">☰ menu</button>
-        </div>
+            <transition id="background_elm">
+                <container>
+                    <canvas id="backgroundCanvas" width="850" height="850" data-textures="/images/textures/noise.png,/images/textures/dither_grid.png"></canvas>
+                </container>
+            </transition>
 
-        <div id="navbar" class="hbox">
-          <div class="blur background">
-            <button id="home">home</button>
-          </div>
+            <app_content>
+                
+            </app_content>
+         
+        </app>
 
-          <div class="blur background farleft">
 
-            <!-- <button id="blog">blog</button>-->
-            <button id="projects">programming stuff</button>
-            <button id="wallpaper">wallpaper</button>
-            <button id="random_video">watch a cat video</button>
+    </crt_mask>
 
-          </div>
-
-          <div class=" blur background align_vertical farleft">
-            <div class="align_vertical_cell">
-              <label id="hit_counter">hi there <3< /label>
-            </div>
-          </div>
-
-        </div>
-
-        <div id="content">
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <script src="javascript/main.js"></script>
+    <script type="text/javascript" src="/js/modules/GlslCanvas.js"></script>
+    <script>var exports = {};</script>
+    <script type="module" src="js/pages/index.js"></script>
 
 </body>
+
+</html>

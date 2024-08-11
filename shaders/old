@@ -1,0 +1,27 @@
+`
+// u_tex0 - noise
+// u_tex1 - texture a 
+// u_tex2 - texture b
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+uniform float dissolve_value;
+uniform vec2 u_resolution;
+uniform sampler2D u_tex0;
+uniform sampler2D u_tex1;
+uniform sampler2D u_tex2;
+void main(){
+    vec2 UV = gl_FragCoord.xy/u_resolution.xy;
+    vec4 noise_texture = texture2D(u_tex0, UV);
+    vec4 main_texture = texture2D(u_tex1, UV);
+	vec4 second_texture = texture2D(u_tex2, UV);
+    main_texture.a *= floor(dissolve_value + min(1.0, noise_texture.x));
+    if (main_texture.a == 0.0){
+		gl_FragColor = second_texture;
+	} else {
+		gl_FragColor = main_texture;
+	}
+
+}
+`

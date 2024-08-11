@@ -1,0 +1,122 @@
+about_page {
+    display: block;
+    flex-direction: column;
+    overflow-y:hidden;
+    height: 100%;
+}
+
+about_page section {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+about_page about_me {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 60%;
+    height: 60%;
+}
+
+about_page about_me>* {
+    display: block;
+    border: solid black 8px;
+    border-radius: 12px !important;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+about_page about_me * {
+    border-radius: 8px;
+}
+
+about_page cat_tile {
+    grid-column: 3/5;
+    grid-row: 5/9;
+}
+
+about_page cat_tile img {
+    width: 100%;
+    height: 100%;
+}
+
+about_page desc_tile {
+    grid-column: 1/3;
+    grid-row: 1/5;
+    font-size: small;
+}
+
+about_page social_desc {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column: 3/5;
+    min-height: 0;
+}
+
+about_page social_desc dither{
+    grid-row: 1/3;
+    grid-column: 1/3;
+    background-color: antiquewhite;
+}
+
+about_page social_desc >div {
+    grid-row: 1/3;
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: small;
+    font-weight: bold;
+    padding: 6px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+about_page social_desc img {
+    height: 100%;
+}
+
+about_page social_desc span {
+    text-align: center;
+    width: 100%;
+}
+
+about_page button {
+    background-color: rgb(48, 12, 132);
+    border: solid 2px black;
+    width: 64px;
+    padding: 6px;
+    border-radius: 32px;
+}
+
+@media (max-width:850px) {
+    about_page about_me {
+        width: 100%  !important;
+        height: 80%;
+        grid-template-columns  : 1fr !important;
+        grid-template-rows  : auto !important;
+
+    }
+
+    about_page about_me  >* {
+        grid-column: unset;
+        grid-row: 1fr;
+    }
+
+    about_page social_desc{
+        height: 45px;
+    }
+    about_page cat_tile{
+        grid-row: unset;
+    }
+    
+}

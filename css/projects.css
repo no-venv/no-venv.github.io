@@ -1,0 +1,26 @@
+projects_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:center;
+    gap: 12px;
+    width: 80%;
+    height: 80%;
+}
+
+projects_container project{
+    border: solid black 8px;
+    border-radius: 12px !important;
+    box-sizing: border-box;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    min-height: 0;
+}
+
+projects_page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
