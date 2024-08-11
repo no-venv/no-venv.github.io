@@ -70,3 +70,9 @@ pic_page {
     gap: 8px;
     height: 100%;
 }
+
+@media screen and (max-width:850px) {
+    pic_container *{
+        width: 100% !important;
+    }
+}   

@@ -22,7 +22,7 @@ async function set_stats() {
     let regex_counter = re.exec(counter)
 
     if (regex_counter){
-        VISITOR_COUNTER.innerText = `${regex_counter[0]} visits`
+        console.log(`${regex_counter[0]} visits`)
     }
 
 }
