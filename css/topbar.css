@@ -1,7 +1,6 @@
 topbar {
     height: 24px;   
     display: flex;
-    justify-content: center;
     align-self: center;
     border-radius: 8px;
     background-color: rgb(0, 0, 0);

@@ -29,9 +29,9 @@ pic_container dither{
 }
 
 pic_viewer{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: 1fr;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
     border: solid black 8px;
     border-radius: 12px !important;
     box-sizing: border-box;
@@ -46,18 +46,18 @@ pic_viewer img{
     min-height: 0;
 }
 
+pic_viewer topbar{
+    width:  100%;
+}
 pic_viewer button{
     z-index: 1;
-    grid-row: 1/2;
-    grid-column: 3/4;
-    display: flex;
+    justify-self:start;
     align-items: center;
     justify-content: center;
-    width: 24px;
     height: 24px;
     padding-bottom: 2px;
     border-radius: 64px !important;
-    background-color: #ff5f56;
+    /* background-color: #ff5f56; */
 }
 
 

@@ -12,7 +12,7 @@ at the end, each directory will be layed out as:
 from os.path import join as join_path
 from os.path import exists as path_exist
 from os.path import dirname,isdir,isfile
-from os import listdir,mkdir
+from os import listdir,mkdir,rename
 from subprocess import Popen
 SCRIPT_PATH = dirname(__file__)
 DIRECTORY_LIST = listdir(SCRIPT_PATH)
@@ -24,7 +24,11 @@ for files in DIRECTORY_LIST:
     target_directory = join_path(SCRIPT_PATH,files)
     
     if isdir(target_directory):
-        
+
+        raw_img_fd_location = join_path(target_directory,"raw")
+        if not isdir(raw_img_fd_location):
+            mkdir(raw_img_fd_location)
+
         thumbnail_fd_location = join_path(target_directory,"thumbnails")
         if not isdir(thumbnail_fd_location):
             mkdir(thumbnail_fd_location)
@@ -61,6 +65,7 @@ for files in DIRECTORY_LIST:
 
             Popen('ffmpeg -y -i {} {} {}.jpg'.format(target_picture,generate_ffmpeg_clamp(1024),output_thumbnail),shell=True).wait()
             Popen('ffmpeg -y -i {} {} {}.jpg'.format(target_picture,generate_ffmpeg_clamp(2048),output_image),shell=True).wait()
-
+            # move to raw
+            rename(target_picture,join_path(raw_img_fd_location,str(stamp_id) + ".png"))
         stamp_id_file.seek(0)
         stamp_id_file.write(str(stamp_id))

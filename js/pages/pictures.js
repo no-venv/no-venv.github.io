@@ -6,7 +6,8 @@ import { GlobalAppManager } from "../services/GlobalAppManager.js";
 const PICTURE_PAGE = document.querySelector("pic_page");
 const PICTURE_CONTAINER_TEMPLETE = document.querySelector("pic_container");
 const PICTURE_VIEWER = PICTURE_PAGE.querySelector("pic_viewer");
-const PICTURE_VIEWER_EXIT_BTN = PICTURE_VIEWER.querySelector("button");
+const PICTURE_VIEWER_EXIT_BTN = document.getElementById("pic_page-exit");
+const PICTURE_VIEWER_RAW_BTN = document.getElementById("pic_page-raw");
 const TOPBAR = PICTURE_PAGE.querySelector("topbar");
 const ROOT_URL = "/images/photography";
 const BACKDROP = "/images/photography/wallpaper.png";
@@ -17,12 +18,13 @@ class Gallary {
         //     this.html_container.clientHeight,
         //     this.html_container.scrollTop
         // )
-        return Math.abs(this.html_container.scrollHeight - this.html_container.clientHeight - this.html_container.scrollTop) <= 1;
+        return Math.abs((this.html_container.scrollHeight - this.html_container.clientHeight - this.html_container.scrollTop)) * 0.3 <= 1;
     }
     NextPicture() {
         let _this = this;
-        let thumbnail = `${this.URL}/thumbnails/${this.picture_cursor}.jpg`;
-        let picture = `${this.URL}/${this.picture_cursor}.jpg`;
+        let current_pic_cursor = this.picture_cursor;
+        let thumbnail = `${this.URL}/thumbnails/${current_pic_cursor}.jpg`;
+        let picture = `${this.URL}/${current_pic_cursor}.jpg`;
         let dither_container = document.createElement("dither");
         this.html_container.appendChild(dither_container);
         this.picture_cursor -= 1;
@@ -34,6 +36,9 @@ class Gallary {
             }
             let new_image = new Image();
             new_image.src = thumbnail;
+            function OnClickRaw() {
+                open(`${_this.URL}/raw/${current_pic_cursor}.png`);
+            }
             function OnClickExit() {
                 Transition(function () {
                     new_image.src = thumbnail;
@@ -41,6 +46,7 @@ class Gallary {
                     PICTURE_PAGE.appendChild(TOPBAR);
                     PICTURE_VIEWER.removeChild(new_image);
                     dither_container.appendChild(new_image);
+                    PICTURE_VIEWER_RAW_BTN.removeEventListener("click", OnClickRaw);
                     _this.Show();
                 });
             }
@@ -52,6 +58,7 @@ class Gallary {
                     dither_container.removeChild(new_image);
                     PICTURE_VIEWER.appendChild(new_image);
                     PICTURE_VIEWER_EXIT_BTN.addEventListener("click", OnClickExit, { once: true });
+                    PICTURE_VIEWER_RAW_BTN.addEventListener("click", OnClickRaw);
                     _this.Hide();
                 });
             }
