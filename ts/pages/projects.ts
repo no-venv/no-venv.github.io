@@ -60,7 +60,6 @@ function NextProject(){
     })
 
     PROJECTS_CONTAINER.appendChild(new_project_templete)
-    console.log(project)
     project_json_index +=1
 }
 
