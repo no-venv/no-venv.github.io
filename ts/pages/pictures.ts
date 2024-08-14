@@ -27,7 +27,8 @@ class Gallary {
         //     this.html_container.clientHeight,
         //     this.html_container.scrollTop
         // )
-        return Math.abs((this.html_container.scrollHeight - this.html_container.clientHeight - this.html_container.scrollTop)) * 0.3 <=1;
+
+        return ((this.html_container.scrollHeight - this.html_container.clientHeight - (this.html_container.scrollTop + (this.html_container.clientHeight * 0.35)) )) <=1;
     }
    
     private NextPicture() {
