@@ -16,9 +16,6 @@ app {
     gap: 4px;
 }
 
-app > topbar{
-    z-index: 1000;
-}
 transition {
     display: flex;
     align-items: center;

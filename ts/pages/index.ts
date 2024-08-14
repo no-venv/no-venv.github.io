@@ -1,7 +1,7 @@
 // init required stuff
 
 import { GlobalAppManager } from "../services/GlobalAppManager.js";
-GlobalAppManager.NavagateTo("/about.html",{})
+GlobalAppManager.NavagateTo("/projects.html",{})
 
 // get all elements with "link attr"
 const TOPBAR_BUTTONS = document.querySelectorAll('[link]');
