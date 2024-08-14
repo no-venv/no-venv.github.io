@@ -12,6 +12,13 @@ const TOPBAR = PICTURE_PAGE.querySelector("topbar");
 const ROOT_URL = "/images/photography";
 const BACKDROP = "/images/photography/wallpaper.png";
 class Gallary {
+    // Class that handles fetching pictures from a specifed group
+    // private html_container_node = PICTURE_CONTAINER_TEMPLETE.cloneNode(true)
+    html_container;
+    picture_cursor = -1;
+    got_stamp = false;
+    reached_end = false;
+    URL = "";
     EndOfPage() {
         // console.log(
         //     this.html_container.scrollHeight,
@@ -98,10 +105,6 @@ class Gallary {
         PICTURE_PAGE.removeChild(this.html_container);
     }
     constructor(group) {
-        this.picture_cursor = -1;
-        this.got_stamp = false;
-        this.reached_end = false;
-        this.URL = "";
         this.URL = `${ROOT_URL}/${group}`;
         let html_container_node = PICTURE_CONTAINER_TEMPLETE.cloneNode(true);
         let container = document.createElement("div");

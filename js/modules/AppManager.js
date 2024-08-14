@@ -32,12 +32,10 @@ function onVisible(element, callback) {
         return new Promise(r => callback = r);
 }
 export class AppManager {
-    constructor() {
-        this.current_page = CURRENT_PAGE_PLACEHOLDER;
-        this.pages = {};
-        this.animator = () => { };
-        this.navagate_debounce = false;
-    }
+    current_page = CURRENT_PAGE_PLACEHOLDER;
+    pages = {};
+    animator = () => { };
+    navagate_debounce = false;
     debug(string) {
         console.log("[AppManager]: ", string);
     }
@@ -64,7 +62,6 @@ export class AppManager {
                 }
             }
             function load_script(script) {
-                var _a;
                 let new_script = document.createElement("script");
                 new_script.innerHTML = script.innerHTML;
                 new_script.src = script.src;
@@ -72,7 +69,7 @@ export class AppManager {
                 new_script.defer = false;
                 new_script.setAttribute("type", "module");
                 new_script.addEventListener("load", on_script_load, { once: true });
-                (_a = script.parentNode) === null || _a === void 0 ? void 0 : _a.appendChild(new_script);
+                script.parentNode?.appendChild(new_script);
             }
             _this.debug(`loading scripts from ${url}`);
             scripts.forEach(load_script);

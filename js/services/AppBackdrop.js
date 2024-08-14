@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 // @ts-ignore
 const TRANSITION_CONTAINER = document.getElementById("transition_elm");
 const BACKGROUND_CONTAINER = document.getElementById("background_elm");
@@ -125,52 +116,48 @@ let set_backdrop;
 function lerp(a, b, x) {
     return a + ((b - a) * x);
 }
-function Animate(from, to, canvas) {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log("animate");
-        let cur_time;
-        let last_time;
-        let END_ANIMATE_TIME = TRANSITION_TIME * 1000;
-        let elasped = 0;
-        let animation_done = new Promise(function (resolve, reject) {
-            function frame(time) {
-                if (!cur_time) {
-                    cur_time = time;
-                    last_time = time;
-                }
-                elasped = cur_time - last_time;
+async function Animate(from, to, canvas) {
+    console.log("animate");
+    let cur_time;
+    let last_time;
+    let END_ANIMATE_TIME = TRANSITION_TIME * 1000;
+    let elasped = 0;
+    let animation_done = new Promise(function (resolve, reject) {
+        function frame(time) {
+            if (!cur_time) {
                 cur_time = time;
-                canvas.setUniform("dissolve_value", lerp(from, to, +(elasped / END_ANIMATE_TIME).toPrecision(2)));
-                if (elasped > END_ANIMATE_TIME) {
-                    resolve(true);
-                    return;
-                }
-                requestAnimationFrame(frame);
+                last_time = time;
             }
-            requestAnimationFrame(frame);
-        });
-        yield animation_done;
-    });
-}
-function preloadImage(url) {
-    return __awaiter(this, void 0, void 0, function* () {
-        // doing this improved site performance by a whole lot
-        let blob = yield fetch(url).then(r => {
-            if (!(r.status == 200)) {
+            elasped = cur_time - last_time;
+            cur_time = time;
+            canvas.setUniform("dissolve_value", lerp(from, to, +(elasped / END_ANIMATE_TIME).toPrecision(2)));
+            if (elasped > END_ANIMATE_TIME) {
+                resolve(true);
                 return;
             }
-            return r.blob();
-        });
-        if (!blob) {
+            requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+    });
+    await animation_done;
+}
+async function preloadImage(url) {
+    // doing this improved site performance by a whole lot
+    let blob = await fetch(url).then(r => {
+        if (!(r.status == 200)) {
             return;
         }
-        let bitmap = yield createImageBitmap(blob, {
-            premultiplyAlpha: "none",
-            colorSpaceConversion: "none"
-        });
-        CANVAS_CONTEXT === null || CANVAS_CONTEXT === void 0 ? void 0 : CANVAS_CONTEXT.drawImage(bitmap, 0, 0);
-        return CANVAS_CONTEXT === null || CANVAS_CONTEXT === void 0 ? void 0 : CANVAS_CONTEXT.getImageData(0, 0, 1024, 1024);
+        return r.blob();
     });
+    if (!blob) {
+        return;
+    }
+    let bitmap = await createImageBitmap(blob, {
+        premultiplyAlpha: "none",
+        colorSpaceConversion: "none"
+    });
+    CANVAS_CONTEXT?.drawImage(bitmap, 0, 0);
+    return CANVAS_CONTEXT?.getImageData(0, 0, 1024, 1024);
 }
 export function SetTransitionBackdrop(src) {
     // Prepares backdrop for transitioning 
@@ -191,26 +178,24 @@ export function SetBackdrop(src) {
         }
     });
 }
-export function Transition(midway_function) {
-    return __awaiter(this, void 0, void 0, function* () {
-        if (!set_backdrop) {
-            return;
-        }
-        let data = yield preloadImage(set_backdrop);
-        if (!data) {
-            midway_function();
-            return;
-        }
-        TRANSITION_CONTAINER.style.zIndex = "999";
-        transition_canvas.loadTexture("u_tex2", data);
-        yield Animate(0, 1, transition_canvas);
+export async function Transition(midway_function) {
+    if (!set_backdrop) {
+        return;
+    }
+    let data = await preloadImage(set_backdrop);
+    if (!data) {
         midway_function();
-        background_canvas.loadTexture("u_tex2", data);
-        background_canvas.setUniform("dissolve_value", 1);
-        first = false; // for background_canvas's SetBackdrop function
-        yield Animate(1, 0, transition_canvas);
-        TRANSITION_CONTAINER.style.zIndex = "-2";
-    });
+        return;
+    }
+    TRANSITION_CONTAINER.style.zIndex = "999";
+    transition_canvas.loadTexture("u_tex2", data);
+    await Animate(0, 1, transition_canvas);
+    midway_function();
+    background_canvas.loadTexture("u_tex2", data);
+    background_canvas.setUniform("dissolve_value", 1);
+    first = false; // for background_canvas's SetBackdrop function
+    await Animate(1, 0, transition_canvas);
+    TRANSITION_CONTAINER.style.zIndex = "-2";
 }
 transition_canvas.load(TRANSITION_CANVAS_SHADER);
 background_canvas.load(BACKDROP_CANVAS_SHADER);
