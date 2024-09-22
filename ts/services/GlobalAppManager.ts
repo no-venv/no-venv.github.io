@@ -1,4 +1,4 @@
-import { Easing, Tween } from "@tweenjs/tween.js"
+import { Easing, Tween } from "tweenjs/tween.js"
 import { AppManager } from "../modules/AppManager.js"
 import { Transition } from "./Transition.js";
 export var GlobalAppManager = new AppManager<any>()
