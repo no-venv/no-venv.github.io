@@ -1,4 +1,4 @@
-import { Easing, Tween } from "tweenjs/tween.js"
+import { Easing, Tween } from "@tweenjs/tween.js"
 const TRANSITION_EASING = Easing.Quartic.InOut;
 export function Transition(from : HTMLElement, to : HTMLElement,transition_sec : number,OnComplete? : (any)){
     
