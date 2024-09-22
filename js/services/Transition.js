@@ -18,7 +18,7 @@ export function Transition(from, to, transition_sec, OnComplete) {
         to.style.zIndex = "2";
         from.style.opacity = "1";
         from.style.filter = "";
-        from.style.zIndex = "";
+        from.style.zIndex = "-1";
         if (OnComplete) {
             OnComplete();
         }

@@ -21,7 +21,7 @@ export function Transition(from : HTMLElement, to : HTMLElement,transition_sec :
             to.style.zIndex = "2"
             from.style.opacity = "1"
             from.style.filter =""
-            from.style.zIndex = ""
+            from.style.zIndex = "-1"
             if (OnComplete){
                 OnComplete()
             }
