@@ -2,7 +2,6 @@
 type UI = {
     OnCreate: ((Argument: any) => any) & any,
     OnResume: ((Argument: any) => any) & any,
-    OnVisible: ((Argument: any) => any) & any,
     OnForeground: (() => any) & any,
     OnDestroy: (() => any) & any,
     _Paused: boolean,
@@ -27,7 +26,6 @@ const CURRENT_PAGE_PLACEHOLDER: PageState = {
         OnResume: () => { },
         OnDestroy: () => { },
         OnForeground: () => { },
-        OnVisible: () => {},
         GUI: NULL_ELEMENT,
         _Paused: false,
         _Name: ""
@@ -42,20 +40,7 @@ const TEMP_ELEMENT_HOLDER: HTMLElement = (function () {
     return holder
 })()
 
-type AnimatorFunc =  (from : UI, to : UI, OnComplete : () => void) => void
-
-
-function onVisible(element : HTMLElement, callback : any) {
-    new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.intersectionRatio > 0) {
-          callback(element);
-          observer.disconnect();
-        }
-      });
-    }).observe(element);
-    if(!callback) return new Promise(r => callback=r);
-  }
+type AnimatorFunc =  (from : UI, to : UI, OnDOM : () => void, OnComplete : () => void) => void
 
 export class AppManager<NameType extends string> {
 
@@ -125,7 +110,7 @@ export class AppManager<NameType extends string> {
         this.pages[name] = UI
     }
 
-    SetAnimator(func : (from : UI, to : UI, OnComplete : () => void) => void) {
+    SetAnimator(func : (from : UI, to : UI, OnDOM : () => void, OnComplete : () => void) => void) {
         this.animator = func
     }
 
@@ -183,21 +168,22 @@ export class AppManager<NameType extends string> {
         }
 
         this.current_page = state
-        
-        if (next_page._Paused) {
-            next_page._Paused = false
-            next_page.OnResume(arg)
-        } else {
-            next_page.OnCreate(arg)
-        }
-        
+                
         let routing_same_page = (previous_page.name == name)
 
         if (!routing_same_page) {
-            let _this = this
 
-            onVisible(next_page.GUI,next_page.OnVisible)
-            this.animator(previous_page.ui,next_page,function(){
+            let _this = this
+            let OnDOM = function(){                      
+                if (next_page._Paused) {
+                    next_page._Paused = false
+                    next_page.OnResume(arg)
+                } else {
+                    next_page.OnCreate(arg)
+                }
+            }
+            
+            this.animator(previous_page.ui,next_page,OnDOM,function(){
               
                 _this.navagate_debounce = false
                 if (foreground) {
@@ -220,7 +206,6 @@ export class AppManager<NameType extends string> {
             OnResume: () => { },
             OnDestroy: () => { },
             OnForeground: () => { },
-            OnVisible: () => {},
             _Paused: false,
             GUI: NULL_ELEMENT,
             _Name: ""

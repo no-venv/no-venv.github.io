@@ -1,57 +1,47 @@
 <html>
 
 <head>
-
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/dither.css" />
+    <link rel="stylesheet" href="css/filter.css" />
     <link rel="stylesheet" href="css/topbar.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 
-    <crt_mask>
-        
-        <app>
+    <app>
 
-   
-            <topbar>
-                <button link="/about.html">about me</button>
-                <button link="/pictures.html">pics</button>
-                <button link="/projects.html">programming</button>
-                <!-- <button id="visitors">hey!</button> -->
-                <!-- <button id="btn_cat">meow</button> -->
+        <topbar>
+            <button link="/about.html">about me</button>
+            <button link="/pictures.html">pics</button>
+            <button link="/projects.html">programming</button>
+            <!-- <button id="visitors">hey!</button> -->
+            <!-- <button id="btn_cat">meow</button> -->
 
-            </topbar> 
-            
-            <transition id="transition_elm">
-                <container>
-                    <canvas id="transitionCanvas" width="850" height="850" data-textures="/images/textures/noise.png,/images/textures/dither_grid.png"></canvas>
-                </container>
-            </transition>
+        </topbar>
 
-            <transition id="background_elm">
-                <container>
-                    <canvas id="backgroundCanvas" width="850" height="850" data-textures="/images/textures/noise.png,/images/textures/dither_grid.png"></canvas>
-                </container>
-            </transition>
+        <app_content class="lofi-filter">
 
-            <app_content>
-                
-            </app_content>
-         
-        </app>
+        </app_content>
 
+    </app>
 
-    </crt_mask>
-
-    <script type="text/javascript" src="/js/modules/GlslCanvas.js"></script>
-    <script>var exports = {};</script>
+    <script type="importmap">
+        {
+            "imports": {
+                "@tweenjs/tween.js": "/node_modules/@tweenjs/tween.js/dist/tween.esm.js"
+            }
+        }
+    </script>
+    <script>var exports = {}; history.scrollRestoration = 'manual';</script>
     <script type="module" src="js/pages/index.js"></script>
 
-<!-- 100% privacy-first analytics -->
-<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+    <!-- 100% privacy-first analytics -->
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""
+            referrerpolicy="no-referrer-when-downgrade" /></noscript>
 
 </body>
 

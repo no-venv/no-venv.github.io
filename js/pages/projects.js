@@ -1,4 +1,3 @@
-import { SetTransitionBackdrop } from "../services/AppBackdrop.js";
 import { GlobalAppManager } from "../services/GlobalAppManager.js";
 const ABOUT_PAGE = document.getElementsByTagName("projects_page")[0];
 const PROJECTS_CONTAINER = document.getElementsByTagName("projects_container")[0];
@@ -78,6 +77,5 @@ fetch(REPO).then(function (response) {
 let UI = GlobalAppManager.NewUITemplete();
 UI.GUI = ABOUT_PAGE;
 UI.OnCreate = function () {
-    SetTransitionBackdrop("/images/projects/wallpaper.png");
 };
 GlobalAppManager.AddPage("/projects.html", UI);

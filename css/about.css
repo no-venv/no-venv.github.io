@@ -1,8 +1,11 @@
 about_page {
+    background-size:cover;   
+    /* background-image: url("/images/about/mohammad-emami-c6eXs8UsvS4-unsplash.jpg"); */
     display: block;
     flex-direction: column;
     overflow-y:hidden;
-    height: 100%;
+    width: inherit;
+    height: inherit;
 }
 
 about_page section {
@@ -14,6 +17,8 @@ about_page section {
     width: 100%;
     height: 100%;
     top: 0;
+    background-size:cover;
+    background-image: url("/images/about/mohammad-emami-c6eXs8UsvS4-unsplash.jpg");
 }
 
 about_page about_me {
@@ -64,7 +69,7 @@ about_page social_desc {
 about_page social_desc dither{
     grid-row: 1/3;
     grid-column: 1/3;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 }
 
 about_page social_desc >div {
@@ -91,9 +96,10 @@ about_page social_desc span {
 }
 
 about_page button {
-    background-color: rgb(48, 12, 132);
-    border: solid 2px black;
-    width: 64px;
+    backdrop-filter: blur(4px);
+    background-color: black;
+    border: solid 2px rgba(0, 0, 0, 0);
+    width: 104px;
     padding: 6px;
     border-radius: 32px;
 }

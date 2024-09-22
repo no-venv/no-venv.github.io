@@ -5,7 +5,6 @@ const CURRENT_PAGE_PLACEHOLDER = {
         OnResume: () => { },
         OnDestroy: () => { },
         OnForeground: () => { },
-        OnVisible: () => { },
         GUI: NULL_ELEMENT,
         _Paused: false,
         _Name: ""
@@ -19,18 +18,6 @@ const TEMP_ELEMENT_HOLDER = (function () {
     document.body.appendChild(holder);
     return holder;
 })();
-function onVisible(element, callback) {
-    new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.intersectionRatio > 0) {
-                callback(element);
-                observer.disconnect();
-            }
-        });
-    }).observe(element);
-    if (!callback)
-        return new Promise(r => callback = r);
-}
 export class AppManager {
     current_page = CURRENT_PAGE_PLACEHOLDER;
     pages = {};
@@ -130,18 +117,19 @@ export class AppManager {
         if (!hidden) {
         }
         this.current_page = state;
-        if (next_page._Paused) {
-            next_page._Paused = false;
-            next_page.OnResume(arg);
-        }
-        else {
-            next_page.OnCreate(arg);
-        }
         let routing_same_page = (previous_page.name == name);
         if (!routing_same_page) {
             let _this = this;
-            onVisible(next_page.GUI, next_page.OnVisible);
-            this.animator(previous_page.ui, next_page, function () {
+            let OnDOM = function () {
+                if (next_page._Paused) {
+                    next_page._Paused = false;
+                    next_page.OnResume(arg);
+                }
+                else {
+                    next_page.OnCreate(arg);
+                }
+            };
+            this.animator(previous_page.ui, next_page, OnDOM, function () {
                 _this.navagate_debounce = false;
                 if (foreground) {
                     previous_page.ui._Paused = true;
@@ -161,7 +149,6 @@ export class AppManager {
             OnResume: () => { },
             OnDestroy: () => { },
             OnForeground: () => { },
-            OnVisible: () => { },
             _Paused: false,
             GUI: NULL_ELEMENT,
             _Name: ""

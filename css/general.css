@@ -3,50 +3,44 @@
     src: url("/fonts/cartograph-sans-cf.woff");
 }
 
-app {
-    display: flex;
-    width: inherit;
-    height: inherit;
-    box-sizing: border-box;
-    flex-direction: column;
-    padding-top: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 20px;
-    gap: 4px;
-}
-
-transition {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-transition container{
+.view-container{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
 
+    >*{
+        grid-column: 1;
+        grid-row: 1;
+        overflow-y: scroll;
+    }
 }
 
-transition canvas {
-    grid-column: 1;
-    grid-row: 1;
-    object-fit: cover;
-    image-rendering: pixelated; 
-    width: 850px;
-    height: 850px;
+app {
+    display: flex;
+    width: 950px;
+    height: 950px;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding-top: 26px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    gap: 4px;
 }
 
 app_content {
-    display: block;
-    overflow-y: scroll;
-    height: inherit;
+    display: grid;
+    border-radius:32px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+
+    >*{
+        grid-column: 1;
+        grid-row: 1;
+    }
 }
 
 crt_mask {
@@ -75,12 +69,11 @@ crt_mask>background {
 
 body {
     /* align everthing to the center */
-    background-color: rgb(0, 0, 0);
+    background-color: #1b011b ;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
-
 }
 
 /* button{
@@ -96,7 +89,8 @@ body {
     margin: 0;
     color: rgb(255, 255, 255);
     font-family: "Cursive";
-    scrollbar-width: none
+    /* scrollbar-width: none; */
+    scroll-behavior: smooth;
 }
 
 img {
@@ -114,21 +108,11 @@ button:hover {
     color: #ff00ee !important;
 }
 
-@media screen and (max-width:850px),(max-height:850px)  {
-    crt_mask {
+@media screen and (max-width:950px),(max-height:950px)  {
+    app {
         width: 100% !important;
         height: 100% !important;
         mask-image: unset !important;
-    }
-
-    transition canvas {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    transition container {
-        width: 100% !important;
-        height: 100% !important;
     }
 
 }

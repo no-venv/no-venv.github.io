@@ -1,11 +1,13 @@
 // this will be used for both my renders + irl photos
 // folders on github is stored as:
 // group -> version number -> images url list
-import { SetTransitionBackdrop, Transition } from "../services/AppBackdrop.js";
 import { GlobalAppManager } from "../services/GlobalAppManager.js";
+import { Transition } from "../services/Transition.js";
 const PICTURE_PAGE = document.querySelector("pic_page") as HTMLElement
 const PICTURE_CONTAINER_TEMPLETE = document.querySelector("pic_container") as HTMLElement
 const PICTURE_VIEWER = PICTURE_PAGE.querySelector("pic_viewer") as HTMLElement
+const PIC_HOME_BTNS = document.getElementById("pic-home-btns") as HTMLElement
+const PIC_VIEWER_BTNS = document.getElementById("pic-viewer-btns") as HTMLElement
 const PICTURE_VIEWER_EXIT_BTN = document.getElementById("pic_page-exit") as HTMLButtonElement
 const PICTURE_VIEWER_RAW_BTN = document.getElementById("pic_page-raw") as HTMLButtonElement
 
@@ -15,7 +17,7 @@ const BACKDROP = "/images/photography/wallpaper.png"
 class Gallary {
     // Class that handles fetching pictures from a specifed group
     // private html_container_node = PICTURE_CONTAINER_TEMPLETE.cloneNode(true)
-    private html_container : HTMLElement
+    public html_container : HTMLElement
     private picture_cursor : number = -1;
     private got_stamp = false;
     private reached_end = false
@@ -36,7 +38,7 @@ class Gallary {
         let current_pic_cursor = this.picture_cursor
         let thumbnail = `${this.URL}/thumbnails/${current_pic_cursor}.jpg`
         let picture = `${this.URL}/${current_pic_cursor}.jpg`
-        let dither_container = document.createElement("dither")
+        let dither_container = document.createElement("generated_image")
         this.html_container.appendChild(dither_container)
         this.picture_cursor -=1
 
@@ -55,29 +57,38 @@ class Gallary {
             }
 
             function OnClickExit(){
-                Transition(function(){
-                    new_image.src = thumbnail
-                    PICTURE_PAGE.removeChild(PICTURE_VIEWER)
-                    PICTURE_PAGE.appendChild(TOPBAR)
-                    PICTURE_VIEWER.removeChild(new_image)
-                    dither_container.appendChild(new_image)
-                    PICTURE_VIEWER_RAW_BTN.removeEventListener("click",OnClickRaw)
-                    _this.Show()
-                })
+                PIC_HOME_BTNS.style.display = ""
+                PIC_VIEWER_BTNS.style.display = "none"
+                Transition(PICTURE_VIEWER,_this.html_container,1)
+                PICTURE_VIEWER_RAW_BTN.removeEventListener("click",OnClickRaw)
+                
+                // Transition(function(){
+                //     new_image.src = thumbnail
+                //     PICTURE_PAGE.removeChild(PICTURE_VIEWER)
+                //     PICTURE_PAGE.appendChild(TOPBAR)
+                //     PICTURE_VIEWER.removeChild(new_image)
+                //     dither_container.appendChild(new_image)
+                //     PICTURE_VIEWER_RAW_BTN.removeEventListener("click",OnClickRaw)
+                //     _this.Show()
+                // })
             }
 
             function OnClick(){
-                Transition(function(){
-                    new_image.src = picture
-                    PICTURE_PAGE.appendChild(PICTURE_VIEWER)
-                    PICTURE_PAGE.removeChild(TOPBAR)
-                    dither_container.removeChild(new_image)
-                    PICTURE_VIEWER.appendChild(new_image)
-                    PICTURE_VIEWER_EXIT_BTN.addEventListener("click",OnClickExit,{once : true})
-                    PICTURE_VIEWER_RAW_BTN.addEventListener("click",OnClickRaw)
-                    _this.Hide()
-                    
-                })
+                PIC_HOME_BTNS.style.display = "none"
+                PIC_VIEWER_BTNS.style.display = ""
+                let img = PICTURE_VIEWER.querySelector("img") as HTMLImageElement;
+                img.src = picture
+                Transition(_this.html_container,PICTURE_VIEWER,1)
+
+                // Transition(function(){
+                //     new_image.src = picture
+                //     PICTURE_PAGE.appendChild(PICTURE_VIEWER)
+                //     PICTURE_PAGE.removeChild(TOPBAR)
+                //     dither_container.removeChild(new_image)
+                //     PICTURE_VIEWER.appendChild(new_image)
+                PICTURE_VIEWER_EXIT_BTN.addEventListener("click",OnClickExit,{once : true})
+                PICTURE_VIEWER_RAW_BTN.addEventListener("click",OnClickRaw)
+               
             }
             dither_container.appendChild(new_image)
             dither_container.addEventListener("click",OnClick)
@@ -140,19 +151,26 @@ class Gallary {
     }
 }
 let current_gallary: Gallary
-
+let debounce = false;
 PICTURE_PAGE.querySelectorAll("[link]").forEach(function (element) {
     let picture_group = element.getAttribute("link") as string
     let new_gallary = new Gallary(picture_group)
     function OnClick(){
+        if (current_gallary == new_gallary){
+            return;
+        }
+        if (debounce){
+            return;
+        }
+        debounce = true;
+    
+        new_gallary.Show()
 
-        Transition(function(){
-            if (current_gallary) {
-                current_gallary.Hide()
-            }
-            new_gallary.Show()
+        Transition(current_gallary.html_container,new_gallary.html_container,1,function(){
             current_gallary = new_gallary
+            debounce = false;
         })
+     
       
     }
     element.addEventListener("click",OnClick)
@@ -167,11 +185,13 @@ PICTURE_PAGE.querySelectorAll("[link]").forEach(function (element) {
 // PICTURE_PAGE.addEventListener()
 let UI = GlobalAppManager.NewUITemplete()
 UI.OnCreate = function (show: string) {
-    SetTransitionBackdrop(BACKDROP)
-}
-UI.OnVisible = function(){
+    current_gallary.html_container.style.zIndex = "1"
     current_gallary.Show()
+
+
+    // SetTransitionBackdrop(BACKDROP)
 }
+
 UI.GUI = PICTURE_PAGE as HTMLAnchorElement
 
 GlobalAppManager.AddPage("/pictures.html", UI)
