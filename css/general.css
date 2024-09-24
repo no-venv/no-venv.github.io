@@ -17,8 +17,8 @@
 
 app {
     display: flex;
-    width: 950px;
-    height: 950px;
+    width: 850px;
+    height: 850px;
     box-sizing: border-box;
     flex-direction: column;
     padding-top: 26px;
@@ -108,7 +108,7 @@ button:hover {
     color: #ff00ee !important;
 }
 
-@media screen and (max-width:950px),(max-height:950px)  {
+@media screen and (max-width:850px),(max-height:850px)  {
     app {
         width: 100% !important;
         height: 100% !important;

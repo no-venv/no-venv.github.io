@@ -22,6 +22,7 @@ class Gallary {
     private got_stamp = false;
     private reached_end = false
     private URL = ""
+    private debounce = false;
 
     private EndOfPage(){
         // console.log(
@@ -59,8 +60,8 @@ class Gallary {
             function OnClickExit(){
                 PIC_HOME_BTNS.style.display = ""
                 PIC_VIEWER_BTNS.style.display = "none"
-                Transition(PICTURE_VIEWER,_this.html_container,1)
                 PICTURE_VIEWER_RAW_BTN.removeEventListener("click",OnClickRaw)
+                Transition(PICTURE_VIEWER,_this.html_container,1)
                 
                 // Transition(function(){
                 //     new_image.src = thumbnail
@@ -74,11 +75,19 @@ class Gallary {
             }
 
             function OnClick(){
+                if (debounce){
+                    return
+                }
+                debounce = true;
                 PIC_HOME_BTNS.style.display = "none"
                 PIC_VIEWER_BTNS.style.display = ""
                 let img = PICTURE_VIEWER.querySelector("img") as HTMLImageElement;
                 img.src = picture
-                Transition(_this.html_container,PICTURE_VIEWER,1)
+                Transition(_this.html_container,PICTURE_VIEWER,1,function(){
+                    debounce = false
+                    PICTURE_VIEWER_EXIT_BTN.addEventListener("click",OnClickExit,{once : true})
+                    PICTURE_VIEWER_RAW_BTN.addEventListener("click",OnClickRaw)
+                })
 
                 // Transition(function(){
                 //     new_image.src = picture
@@ -86,8 +95,7 @@ class Gallary {
                 //     PICTURE_PAGE.removeChild(TOPBAR)
                 //     dither_container.removeChild(new_image)
                 //     PICTURE_VIEWER.appendChild(new_image)
-                PICTURE_VIEWER_EXIT_BTN.addEventListener("click",OnClickExit,{once : true})
-                PICTURE_VIEWER_RAW_BTN.addEventListener("click",OnClickRaw)
+          
                
             }
             dither_container.appendChild(new_image)

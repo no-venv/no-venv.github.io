@@ -1,4 +1,5 @@
 // init required stuff
+import { init_cursor_trail } from "../modules/CursorTrail.js";
 import { GlobalAppManager } from "../services/GlobalAppManager.js";
 GlobalAppManager.NavagateTo("/about.html", {});
 // get all elements with "link attr"
@@ -26,3 +27,4 @@ TOPBAR_BUTTONS.forEach(function (element) {
     });
 });
 set_stats();
+init_cursor_trail("/images/cursor/cursor.png", 1 / 8);
