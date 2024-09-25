@@ -17,6 +17,7 @@ about_page section {
     width: 100%;
     height: 100%;
     top: 0;
+    background-color: #1b011b;
     background-size:cover;
     background-image: url("/images/about/mohammad-emami-c6eXs8UsvS4-unsplash.jpg");
 }
