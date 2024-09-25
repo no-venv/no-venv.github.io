@@ -2,8 +2,8 @@
 
 import { init_cursor_trail } from "../modules/CursorTrail.js";
 import { GlobalAppManager } from "../services/GlobalAppManager.js";
-GlobalAppManager.NavagateTo("/guestboard.html",{})
-// GlobalAppManager.NavagateTo("/about.html",{})
+// GlobalAppManager.NavagateTo("/guestboard.html",{})
+GlobalAppManager.NavagateTo("/about.html",{})
 // get all elements with "link attr"
 const TOPBAR_BUTTONS = document.querySelectorAll('[link]');
 const VISITOR_COUNTER = document.getElementById("visitors") as HTMLElement
