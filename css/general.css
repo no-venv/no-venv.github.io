@@ -43,33 +43,9 @@ app_content {
     }
 }
 
-crt_mask {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    display: grid;
-    width: 850px;
-    height: 850px;
-
-    /* min-width: 0; */
-}
-
-crt_mask>* {
-    grid-row: 1/2;
-    grid-column: 1/2;
-    min-height: 0;
-    min-width: 0;
-    border-radius: 12px;
-}
-
-crt_mask>background {
-    filter: brightness(.8);
-    z-index: -100;
-}
-
-
 body {
     /* align everthing to the center */
-    background-color: #1b011b ;
+    background-color: #000000 ;
     display: flex;
     align-items: center;
     justify-content: center;

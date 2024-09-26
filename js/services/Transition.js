@@ -4,6 +4,7 @@ export function Transition(from, to, transition_sec, OnComplete) {
     from.style.zIndex = "2";
     from.style.position = "relative";
     to.style.zIndex = "1";
+    to.style.visibility = "visible";
     let tween_prop = { opacity: 1, blur: 0 };
     let complete = false;
     let tween = new Tween(tween_prop)
@@ -18,6 +19,7 @@ export function Transition(from, to, transition_sec, OnComplete) {
         to.style.zIndex = "2";
         from.style.opacity = "1";
         from.style.filter = "";
+        from.style.visibility = "hidden";
         from.style.zIndex = "-1";
         if (OnComplete) {
             OnComplete();

@@ -20,7 +20,6 @@ function build_tween(from : any, to : any, sec : number){
     tween = new Tween(from)
         .to(to,  sec * 1000)
         .onStart(function(){
-            console.log("begin")
             requestAnimationFrame(animate)
         })
 
@@ -39,6 +38,7 @@ function new_trail(){
     trail.style.imageRendering = "crisp-edges"
     trail.style.width = "32px"
     trail.style.height = "29px"
+    trail.style.zIndex = "900"
     trail.style.pointerEvents = "none"
     trail.style.position = "absolute"
     return trail

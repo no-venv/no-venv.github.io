@@ -5,7 +5,7 @@ export function Transition(from : HTMLElement, to : HTMLElement,transition_sec :
     from.style.zIndex = "2"
     from.style.position = "relative"
     to.style.zIndex = "1"
-
+    to.style.visibility = "visible"
 
     let tween_prop = { opacity: 1, blur :0}
     let complete = false;
@@ -21,6 +21,7 @@ export function Transition(from : HTMLElement, to : HTMLElement,transition_sec :
             to.style.zIndex = "2"
             from.style.opacity = "1"
             from.style.filter =""
+            from.style.visibility ="hidden"
             from.style.zIndex = "-1"
             if (OnComplete){
                 OnComplete()

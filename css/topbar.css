@@ -3,6 +3,6 @@ topbar {
     display: flex;
     align-self: center;
     border-radius: 8px;
-    background-color:  #1b011b;
+    background-color:  #000000;
     gap: 4px;
 }
