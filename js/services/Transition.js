@@ -7,18 +7,19 @@ export function Transition(from, to, transition_sec, OnComplete) {
     to.style.visibility = "visible";
     let tween_prop = { opacity: 1, blur: 0 };
     let complete = false;
+    let saved_filter = from.style.filter;
     let tween = new Tween(tween_prop)
-        .to({ opacity: 0, blur: 64 }, transition_sec * 1000)
+        .to({ opacity: 0, blur: 64 }, transition_sec * 500)
         .easing(TRANSITION_EASING)
         .onUpdate(function () {
         from.style.opacity = `${tween_prop.opacity}`;
-        from.style.filter = `blur(${tween_prop.blur}px)`;
+        // from.style.filter = `${saved_filter}; blur(${tween_prop.blur}px)`
     })
         .onComplete(function () {
         complete = true;
         to.style.zIndex = "2";
         from.style.opacity = "1";
-        from.style.filter = "";
+        // from.style.filter = ""
         from.style.visibility = "hidden";
         from.style.zIndex = "-1";
         if (OnComplete) {

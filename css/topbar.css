@@ -6,3 +6,14 @@ topbar {
     background-color:  #000000;
     gap: 4px;
 }
+
+.topbar_main{
+    position: relative;
+    background: none;
+    width: 100%;
+    border-radius: 12px;
+    padding: 2px;
+    border: 1px rgba(255, 255, 255, 0.1) solid;
+    backdrop-filter: blur(32px);
+    z-index: 999;
+}
