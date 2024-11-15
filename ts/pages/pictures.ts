@@ -40,6 +40,7 @@ class Gallary {
         let thumbnail = `${this.URL}/thumbnails/${current_pic_cursor}.jpg`
         let picture = `${this.URL}/${current_pic_cursor}.jpg`
         let dither_container = document.createElement("generated_image")
+        dither_container.classList.add("border")
         this.html_container.appendChild(dither_container)
         this.picture_cursor -=1
 

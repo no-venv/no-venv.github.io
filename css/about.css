@@ -1,71 +1,55 @@
 about_page {
-    background-size:cover;   
+    background-size: cover;
     display: block;
     flex-direction: column;
-    overflow-y:hidden;
+    overflow-y: hidden;
     width: inherit;
     height: inherit;
 }
-about_page h1{
+
+about_page h1 {
     font-size: 38px;
 }
-#welcome_h1{
+
+#welcome_h1 {
     color: #ffffff;
-    text-shadow: #a9fff1 0px 0 20px;
+    text-shadow: #ffffff 0px 0 20px;
 }
-about_page .progress_bar{
-    
+
+about_page .progress_bar {
     text-align: center;
     line-height: 34px;
-    background: linear-gradient(to right,#64e6b4, #00000000 0%);
+    background: linear-gradient(to right, #c1c1c1, #7a7a7a 0%);
     background-clip: padding-box !important;
     border: rgba(255, 255, 255, 0.1) solid 1px;
     border-radius: 12px;
     height: 34px;
 }
+
 about_page section {
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 38px;
+    gap: 8px;
     width: 100%;
     height: 100%;
     top: 0;
-    background-color: #1b011b;
-    background-size:cover;
-    background-image: url("/images/about/1920x1200-966254-city-Japan-skyline-dark-Asia-urban-street.jpg");
+
 }
 
-
 about_page about_me {
-    padding: 12px;
-    overflow-y:scroll;
-    backdrop-filter: blur(32px);
-    background: linear-gradient(#1b2f3ace, #1b2e3ace,#0d171dce);
-    background-clip: padding-box;
-    border: rgba(255, 255, 255, 0.1) solid 1px;
+    background: #0000004e;
+
     border-radius: 12px;
+    padding: 12px;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 80%;
     height: 80%;
 }
-
-
-
-/* about_page about_me>* {
-    display: block;
-    border: solid black 8px;
-    border-radius: 12px !important;
-    box-sizing: border-box;
-    background-color: black;
-}
-
-about_page about_me * {
-    border-radius: 8px;
-} */
 
 about_page cat_tile {
     grid-column: 3/5;
@@ -93,13 +77,13 @@ about_page social_desc {
     max-height: 48px;
 }
 
-about_page social_desc dither{
+about_page social_desc dither {
     grid-row: 1/3;
     grid-column: 1/3;
     /* background-color: antiquewhite; */
 }
 
-about_page social_desc >div {
+about_page social_desc>div {
     grid-row: 1/3;
     grid-column: 1/3;
     display: flex;
@@ -133,23 +117,24 @@ about_page button {
 
 @media (max-width:850px) {
     about_page about_me {
-        width: 100%  !important;
+        width: 100% !important;
         height: 80%;
-        grid-template-columns  : 1fr !important;
-        grid-template-rows  : auto !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
 
     }
 
-    about_page about_me  >* {
+    about_page about_me>* {
         grid-column: unset;
         grid-row: 1fr;
     }
 
-    about_page social_desc{
+    about_page social_desc {
         height: 45px;
     }
-    about_page cat_tile{
+
+    about_page cat_tile {
         grid-row: unset;
     }
-    
+
 }

@@ -38,6 +38,7 @@ function NextProject(){
         return
     }
     let new_project_templete = document.createElement("project")
+    new_project_templete.classList.add("border")
     new_project_templete.innerHTML += `
             <h4>
                 ${project.name}

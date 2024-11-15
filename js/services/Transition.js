@@ -1,32 +1,44 @@
 import { Easing, Tween } from "@tweenjs/tween.js";
 const TRANSITION_EASING = Easing.Quartic.InOut;
 export function Transition(from, to, transition_sec, OnComplete) {
-    from.style.zIndex = "2";
-    from.style.position = "relative";
-    to.style.zIndex = "1";
-    to.style.visibility = "visible";
-    let tween_prop = { opacity: 1, blur: 0 };
+    // from.style.zIndex = "2"
+    //from.style.position = "relative"
+    // to.style.zIndex = "1"
+    to.style.opacity = "0";
+    to.style.display = "";
+    let tween_prop = { opacity: 1 };
     let complete = false;
     let saved_filter = from.style.filter;
-    let tween = new Tween(tween_prop)
-        .to({ opacity: 0, blur: 64 }, transition_sec * 500)
+    let tween;
+    let fade_in_next = new Tween(tween_prop)
+        .to({ opacity: 1 }, transition_sec * 500)
         .easing(TRANSITION_EASING)
         .onUpdate(function () {
-        from.style.opacity = `${tween_prop.opacity}`;
-        // from.style.filter = `${saved_filter}; blur(${tween_prop.blur}px)`
+        to.style.opacity = `${tween_prop.opacity}`;
     })
         .onComplete(function () {
         complete = true;
-        to.style.zIndex = "2";
-        from.style.opacity = "1";
+        //   to.style.zIndex = "2"
+        //   from.style.opacity = "1"
         // from.style.filter = ""
-        from.style.visibility = "hidden";
-        from.style.zIndex = "-1";
+        //   from.style.zIndex = "-1"
         if (OnComplete) {
             OnComplete();
         }
+    });
+    let fade_out_current = new Tween(tween_prop)
+        .to({ opacity: 0 }, transition_sec * 500)
+        .easing(TRANSITION_EASING)
+        .onUpdate(function () {
+        from.style.opacity = `${tween_prop.opacity}`;
     })
-        .start();
+        .onComplete(function () {
+        from.style.display = "none";
+        tween = fade_in_next;
+        tween.start();
+    });
+    tween = fade_out_current;
+    tween.start();
     function animate(time) {
         if (complete) {
             console.log("completed animation");

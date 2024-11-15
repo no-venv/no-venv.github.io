@@ -16,7 +16,7 @@ LOGIN_BUTTON.onclick = function () {
 // setup the progress bars
 PROGRESS_BARS.forEach(function (element) {
     let percent = element.getAttribute("percent");
-    element.style.background = `linear-gradient(to right,#64e6b4, #00000000 ${percent}%)`;
+    element.style.background = `linear-gradient(to right,#c1c1c1, #1a1a1a ${percent}%)`;
     element.innerText += ` | ${percent}% done`;
     //    background: linear-gradient(to right,#64e6b4, #00000000 0%);
 });
