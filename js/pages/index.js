@@ -14,11 +14,10 @@ async function set_stats() {
     }
     let response = await fetch("https://corsproxy.io/?https://www.freevisitorcounters.com/en/home/stats/id/1075808");
     let responsehtml = await response.text();
-    let re = new RegExp(".+?(?=<)");
-    let counter = responsehtml.split("<td>All</td>\n<td>")[1];
-    let regex_counter = re.exec(counter);
-    if (regex_counter) {
-        console.log(`${regex_counter[0]} visits`);
+    responsehtml = responsehtml.replaceAll(/\s/g, '');
+    let vists_match = responsehtml.match(/<td>All<\/td><td>(\d+)<\/td>/);
+    if (vists_match) {
+        console.log(vists_match[1], " vists");
     }
 }
 TOPBAR_BUTTONS.forEach(function (element) {

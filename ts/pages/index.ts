@@ -8,6 +8,7 @@ GlobalAppManager.NavagateTo("/about.html",{})
 const TOPBAR_BUTTONS = document.querySelectorAll('[link]');
 const VISITOR_COUNTER = document.getElementById("visitors") as HTMLElement
 const LOCALHOST = location.hostname == "localhost"
+
 async function set_stats() {
 
     if (document.cookie != "marked" && (!LOCALHOST)) {
@@ -17,13 +18,12 @@ async function set_stats() {
     }
 
     let response = await fetch("https://corsproxy.io/?https://www.freevisitorcounters.com/en/home/stats/id/1075808")
-    let responsehtml = await response.text();
-    let re = new RegExp(".+?(?=<)")
-    let counter = responsehtml.split("<td>All</td>\n<td>")[1]
-    let regex_counter = re.exec(counter)
+    let responsehtml = await response.text()
+    responsehtml = responsehtml.replaceAll(/\s/g, '')
+    let vists_match = responsehtml.match(/<td>All<\/td><td>(\d+)<\/td>/)
 
-    if (regex_counter){
-        console.log(`${regex_counter[0]} visits`)
+    if (vists_match){
+        console.log(vists_match[1]," vists")
     }
 
 }
