@@ -1,12 +1,11 @@
 // init required stuff
 
 import { init_cursor_trail } from "../modules/CursorTrail.js";
+import { warp_fade_out } from "../modules/WarpTransition.js";
 import { GlobalAppManager } from "../services/GlobalAppManager.js";
 // GlobalAppManager.NavagateTo("/guestboard.html",{})
-GlobalAppManager.NavagateTo("/title.html",{})
 // get all elements with "link attr"
 const TOPBAR_BUTTONS = document.querySelectorAll('[link]');
-const VISITOR_COUNTER = document.getElementById("visitors") as HTMLElement
 const LOCALHOST = location.hostname == "localhost"
 
 async function set_stats() {
@@ -38,4 +37,7 @@ TOPBAR_BUTTONS.forEach(function(element){
 set_stats()
 
 init_cursor_trail("/images/cursor/cursor2.png",1/8)
-
+GlobalAppManager.NavagateTo("/title.html",{})
+setTimeout(function(){
+    warp_fade_out(document.getElementById("loading_screen") as HTMLElement)
+},500)
