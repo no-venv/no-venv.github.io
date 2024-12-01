@@ -25,29 +25,29 @@ function build_tween(from : any, to : any, sec : number){
 
 export function warp_fade_out(html_element: HTMLElement) {
     // clone the svg element
-    let container = document.createElement("div")
-    container.style.width = "0px"
-    container.style.height = "0px"
-    document.body.appendChild(container)
+    // let container = document.createElement("div")
+    // container.style.width = "0px"
+    // container.style.height = "0px"
+    // document.body.appendChild(container)
 
-    let new_warp_svg = WARP_SVG_TEMPLETE.cloneNode(true)
-    container.appendChild(new_warp_svg)
+    // let new_warp_svg = WARP_SVG_TEMPLETE.cloneNode(true)
+    // container.appendChild(new_warp_svg)
 
-    let filter = container.querySelector("filter") as SVGFilterElement
-    filter.id = `warp_svg_instance_${counter}`
+    // let filter = container.querySelector("filter") as SVGFilterElement
+    // filter.id = `warp_svg_instance_${counter}`
 
-    let turbulence = container.querySelector("feTurbulence") as SVGFETurbulenceElement
-    turbulence.setAttribute("baseFrequency","1")
+    // let turbulence = container.querySelector("feTurbulence") as SVGFETurbulenceElement
+    // turbulence.setAttribute("baseFrequency","1")
 
-    html_element.style.filter = `url(#${filter.id})`
+    // html_element.style.filter = `url(#${filter.id})`
 
 
-    let fizz_tween = build_tween({value : 0},{value : 0.009},3)
-    .onUpdate(function(upd){
-        turbulence.setAttribute("baseFrequency",`${upd.value}`)
-    })
-    fizz_tween
-    .start().update()
+    // let fizz_tween = build_tween({value : 0},{value : 0.009},3)
+    // .onUpdate(function(upd){
+    //     turbulence.setAttribute("baseFrequency",`${upd.value}`)
+    // })
+    // fizz_tween
+    // .start().update()
     
     
     setTimeout(function(){
@@ -56,7 +56,7 @@ export function warp_fade_out(html_element: HTMLElement) {
             html_element.style.opacity = `${upd.value}`
         })
         .onComplete(function(){
-            fizz_tween.stop()
+      //      fizz_tween.stop()
             html_element.style.display = "none"
         })
         .easing(Easing.Linear.InOut)
