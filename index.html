@@ -13,13 +13,21 @@
         href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Lexend:wght@100..900&display=swap"
         rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    
 </head>
 
 <body>
+   
 
-    <app class="border blur">
+    <app class="border">
+
+        <app_content>
+
+        </app_content>
 
         <topbar class="topbar_main ">
+            <button link="/title.html">home</button>
             <button link="/about.html">about me</button>
             <button link="/pictures.html">pics</button>
             <button link="/projects.html">programming</button>
@@ -29,11 +37,32 @@
 
         </topbar>
 
-        <app_content>
-
-        </app_content>
-
     </app>
+
+    <!-- global effects -->
+    <svg style="width: 0px; height: 0px">
+        <filter id="warp">
+            <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="0.2" result="waves">
+            </feTurbulence>
+            <feColorMatrix in="waves" type="hueRotate">
+                <animate attributeName="values" values="0;360" dur="2s" repeatCount="indefinite"></animate>
+            </feColorMatrix>
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="15" in="SourceGraphic">
+            </feDisplacementMap>
+        </filter>
+    </svg>
+
+    <svg style="width: 0px; height: 0px">
+        <filter id="button_warp">
+            <feTurbulence type="fractalNoise" baseFrequency="1.003" numOctaves="0.2" result="waves">
+            </feTurbulence>
+            <feColorMatrix in="waves" type="hueRotate">
+                <animate attributeName="values" values="0;360" dur="2s" repeatCount="indefinite"></animate>
+            </feColorMatrix>
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="15" in="SourceGraphic">
+            </feDisplacementMap>
+        </filter>
+    </svg>
 
     <script type="importmap">
         {

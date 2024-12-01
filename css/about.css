@@ -1,8 +1,10 @@
 about_page {
     background-size: cover;
-    display: block;
-    flex-direction: column;
+    display: flex;
+    flex-direction:row;
     overflow-y: hidden;
+    align-items: center;
+    justify-content: center;
     width: inherit;
     height: inherit;
 }
@@ -12,6 +14,10 @@ about_page h1 {
 }
 
 #welcome_h1 {
+    text-align: center;
+    font-size: 80px;
+    height: 100px;
+    filter: url(#button_warp);
     color: #ffffff;
     text-shadow: #ffffff 0px 0 20px;
 }
@@ -26,29 +32,13 @@ about_page .progress_bar {
     height: 34px;
 }
 
-about_page section {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-    top: 0;
-
-}
-
 about_page about_me {
-    background: #0000004e;
-
-    border-radius: 12px;
-    padding: 12px;
+    width: 80%;
+    height: 80%;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: 80%;
-    height: 80%;
 }
 
 about_page cat_tile {

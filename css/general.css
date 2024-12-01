@@ -3,6 +3,12 @@
     src: url("/fonts/cartograph-sans-cf.woff");
 }
 
+@font-face {
+    font-family: "Pixel";
+    src: url("/fonts/YapariTrial-Regular.ttf");
+}
+
+
 .view-container{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -27,7 +33,7 @@
 
 app {
   
-    backdrop-filter: brightness(.9);
+    backdrop-filter: brightness(.7);
     display: flex;
     width: 850px;
     height: 850px;
@@ -58,9 +64,9 @@ app_content {
 
 body {
     /* align everthing to the center */
-    background-image: url("/images/background.jpg");
+    image-rendering: pixelated;
+    background-image: url("/images/coloredwallpaper.png");
     background-size:cover;
-
     background-color: #000000 ;
     display: flex;
     align-items: center;
@@ -97,7 +103,7 @@ button {
 }
 
 button:hover {
-    color: #ff00ee !important;
+    color: #aafc13 !important;
 }
 
 @media screen and (max-width:850px),(max-height:850px)  {

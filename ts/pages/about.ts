@@ -1,21 +1,9 @@
 import { GlobalAppManager } from "../services/GlobalAppManager.js";
 import { Transition } from "../services/Transition.js";
 const ABOUT_PAGE = document.getElementsByTagName("about_page")[0] as HTMLElement
-const LOGIN_SECTION = document.getElementById("login_section") as HTMLElement
-const ABOUT_ME_SECTION = document.getElementById("about_me_section") as HTMLElement
-const LOGIN_BUTTON = LOGIN_SECTION?.querySelector("button") as HTMLElement
-const PROGRESS_BARS = ABOUT_ME_SECTION.querySelectorAll(".progress_bar") as NodeListOf<HTMLElement>;
-const TRANSITION_PROPERTY = "all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1)"
+const PROGRESS_BARS = ABOUT_PAGE.querySelectorAll(".progress_bar") as NodeListOf<HTMLElement>;
 const ABOUT_ME_CLOCK = document.getElementById("about_me_clock") as HTMLElement;
-// init
-LOGIN_BUTTON.onclick = function(){
-    // start transition
-    
-    Transition(LOGIN_SECTION,ABOUT_ME_SECTION,1,function(){
 
-    })
-    
-}
 // setup the progress bars
 PROGRESS_BARS.forEach(function(element){
     let percent = element.getAttribute("percent");
@@ -25,15 +13,15 @@ PROGRESS_BARS.forEach(function(element){
 
 })
 
-setInterval(function(){
+function clock(){
     let current_date = new Date();
-   ABOUT_ME_CLOCK.innerHTML = current_date.toLocaleTimeString([],{timeZone:"America/Edmonton"})
-},1000)
+    ABOUT_ME_CLOCK.innerHTML = current_date.toLocaleTimeString([],{timeZone:"America/Edmonton"})
+}
+clock()
+setInterval(clock,1000)
 
 let UI = GlobalAppManager.NewUITemplete()
-UI.OnCreate = function(){
-    // SetTransitionBackdrop(current_backdrop)
-}
+UI.OnCreate = function(){}
 UI.GUI = ABOUT_PAGE as HTMLAnchorElement
 
 GlobalAppManager.AddPage("/about.html",UI)

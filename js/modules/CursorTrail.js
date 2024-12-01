@@ -45,12 +45,13 @@ document.onmousemove = function (ev) {
     let trail = new_trail();
     trail.style.left = `${ev.pageX}px`;
     trail.style.top = `${ev.pageY}px`;
-    build_tween({ rotate: 0 }, { rotate: 359 }, 1)
+    let rotate_tween = build_tween({ rotate: 0 }, { rotate: 359 }, 1)
         .easing(Easing.Linear.InOut)
         .onUpdate(function (upd) {
         trail.style.transform = `rotate(${upd.rotate}deg)`;
     })
-        .repeat(Infinity)
+        .repeat(Infinity);
+    rotate_tween
         .start()
         .update();
     build_tween({ opacity: 0 }, { opacity: 1 }, 0.2)
@@ -58,6 +59,7 @@ document.onmousemove = function (ev) {
         trail.style.opacity = `${upd.opacity}`;
     })
         .onComplete(function () {
+        rotate_tween.stop();
         trail.remove();
     })
         .repeat(1)
@@ -88,12 +90,13 @@ document.onmousedown = function (ev) {
             .easing(Easing.Quadratic.InOut)
             .start()
             .update();
-        build_tween({ rotate: 0 }, { rotate: 359 }, 1)
+        let rotate_tween = build_tween({ rotate: 0 }, { rotate: 359 }, 1)
             .easing(Easing.Linear.InOut)
             .onUpdate(function (upd) {
             trail.style.transform = `rotate(${upd.rotate}deg)`;
         })
-            .repeat(Infinity)
+            .repeat(Infinity);
+        rotate_tween
             .start()
             .update();
         build_tween({ opacity: 0 }, { opacity: 1 }, 0.2)
@@ -101,6 +104,7 @@ document.onmousedown = function (ev) {
             trail.style.opacity = `${upd.opacity}`;
         })
             .onComplete(function () {
+            rotate_tween.stop();
             trail.remove();
         })
             .repeat(1)
