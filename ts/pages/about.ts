@@ -3,7 +3,7 @@ import { Transition } from "../services/Transition.js";
 const ABOUT_PAGE = document.getElementsByTagName("about_page")[0] as HTMLElement
 const PROGRESS_BARS = ABOUT_PAGE.querySelectorAll(".progress_bar") as NodeListOf<HTMLElement>;
 const ABOUT_ME_CLOCK = document.getElementById("about_me_clock") as HTMLElement;
-
+const DESC = document.querySelectorAll("social_desc") as NodeListOf<HTMLElement>;
 // setup the progress bars
 PROGRESS_BARS.forEach(function(element){
     let percent = element.getAttribute("percent");
@@ -11,6 +11,14 @@ PROGRESS_BARS.forEach(function(element){
     element.innerText += ` | ${percent}% done`
     //    background: linear-gradient(to right,#64e6b4, #00000000 0%);
 
+})
+
+DESC.forEach(function(element){
+    if (element.hasAttribute("href")){
+        element.onclick = function(){
+            open(element.getAttribute("href") as string)
+        }
+    }
 })
 
 function clock(){

@@ -79,7 +79,6 @@ about_page social_desc>div {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: small;
     font-weight: bold;
     padding: 6px;
     box-sizing: border-box;

@@ -80,7 +80,7 @@
             <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="0.2" result="waves">
             </feTurbulence>
             <feColorMatrix in="waves" type="hueRotate">
-                <animate attributeName="values" values="0;360" dur="2s" repeatCount="indefinite"></animate>
+                <animate attributeName="values" values="0;360" dur="1.5s" repeatCount="indefinite"></animate>
             </feColorMatrix>
             <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="15" in="SourceGraphic">
             </feDisplacementMap>
@@ -94,7 +94,7 @@
             <feColorMatrix in="waves" type="hueRotate">
                 <animate attributeName="values" values="0;360" dur="2s" repeatCount="indefinite"></animate>
             </feColorMatrix>
-            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="15" in="SourceGraphic">
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="8" in="SourceGraphic">
             </feDisplacementMap>
         </filter>
     </svg>
