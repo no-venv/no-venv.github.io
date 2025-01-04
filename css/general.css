@@ -26,6 +26,9 @@
     background-clip:padding-box;
     border-radius: 12px;
 }
+.shadow{
+    box-shadow: black 0px 4px 23px 4px;
+}
 
 .blur{
     backdrop-filter: blur(8px);
@@ -33,7 +36,7 @@
 
 app {
   
-    backdrop-filter: brightness(.7);
+    backdrop-filter: brightness(.6) sepia() hue-rotate(240deg);
     display: flex;
     width: 850px;
     height: 850px;
