@@ -1,129 +1,98 @@
-about_page {
-    background-size: cover;
-    display: flex;
-    flex-direction:row;
-    overflow-y: hidden;
-    align-items: center;
-    justify-content: center;
-    width: inherit;
-    height: inherit;
+#app-about {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+
+    >* {
+        border-radius: 16px;
+        border: 8px solid;
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.281);
+    }
+
 }
 
-about_page h1 {
-    font-size: 38px;
-}
-
-#welcome_h1 {
-    text-align: center;
-    font-size: 80px;
-    height: 100px;
-    filter: url(#button_warp);
-    color: #ffffff;
-    text-shadow: #ffffff 0px 0 20px;
-}
-
-about_page .progress_bar {
-    text-align: center;
-    line-height: 34px;
-    background: linear-gradient(to right, #c1c1c1, #7a7a7a 0%);
-    background-clip: padding-box !important;
-    border: rgba(255, 255, 255, 0.1) solid 1px;
-    border-radius: 12px;
-    height: 34px;
-}
-
-about_page about_me {
-    width: 80%;
-    height: 80%;
-    overflow-y: scroll;
+#clock {
+    background-color: black;
+    grid-column: 3/6;
+    grid-row: 1/3;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-}
-
-about_page cat_tile {
-    grid-column: 3/5;
-    grid-row: 5/9;
-}
-
-about_page cat_tile img {
-    width: 100%;
-    height: 100%;
-}
-
-about_page desc_tile {
-    grid-column: 1/3;
-    grid-row: 1/5;
-    font-size: small;
-}
-
-about_page social_desc {
-    border: rgba(255, 255, 255, 0.1) solid 1px;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-column: 3/5;
-    max-height: 48px;
-}
-
-about_page social_desc dither {
-    grid-row: 1/3;
-    grid-column: 1/3;
-    /* background-color: antiquewhite; */
-}
-
-about_page social_desc>div {
-    grid-row: 1/3;
-    grid-column: 1/3;
-    display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+
+    * {
+        color: ff156b;
+    }
+
+    h1 {
+        text-shadow: 0px 0px 20px rgb(193, 15, 80);
+        font-size: 75;
+        font-weight: 100;
+        text-transform: lowercase;
+        justify-self: center;
+        align-self: center;
+    }
+}
+
+#where-i-live {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    border-color: #ff156b;
+    background-image: url("/images/about/canada.png");
+    background-size: cover;
+    background-color: rgb(0, 0, 0);
+}
+
+#cute-animals {
+    grid-column: 3 / 6;
+    grid-row: 3 / 6;
+    background-image: url("/images/about/animals.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 0, 0);
+}
+
+#my-hobbies {
+    display: flex;
+    /* text-align: center; */
     font-weight: bold;
-    padding: 6px;
-    box-sizing: border-box;
-    vertical-align: middle;
-    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / 3;
+    color: black;
+    border-color: #62ff89;
+    background-color: #35cb97;
 }
 
-about_page social_desc img {
-    height: 100%;
-}
-
-about_page social_desc span {
+#my-socials {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    background-color: #ffb566;
+    border-color: #ffed96;
+    padding: 8px;
+    grid-column: 1 / 3;
+    grid-row: 4 / 6;
     text-align: center;
-    width: 100%;
+    a{
+        border-radius: 16px;
+        padding: 12px;
+        border: 8px solid #ffffff;
+        background-color: #ffffff;
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.281);
+
+    }
 }
-
-about_page button {
-    backdrop-filter: blur(4px);
-    background-color: black;
-    border: solid 2px rgba(0, 0, 0, 0);
-    width: 104px;
-    padding: 6px;
-    border-radius: 32px;
-}
-
-@media (max-width:850px) {
-    about_page about_me {
-        width: 100% !important;
-        height: 80%;
-        grid-template-columns: 1fr !important;
-        grid-template-rows: auto !important;
-
-    }
-
-    about_page about_me>* {
-        grid-column: unset;
-        grid-row: 1fr;
-    }
-
-    about_page social_desc {
-        height: 45px;
-    }
-
-    about_page cat_tile {
-        grid-row: unset;
-    }
+#my-socials-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 16px;
+    flex-direction: column;
 
 }

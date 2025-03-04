@@ -2,103 +2,23 @@
 
 <head>
     <base href="./">
-    <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/filter.css" />
-    <link rel="stylesheet" href="css/topbar.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Lexend:wght@100..900&display=swap"
-        rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-
-    <!-- loading screen -->
-    <style>
-        #loading_screen{
-            background-color: black;
-            display: flex;
-            z-index: 10;
-            position: fixed;
-            width: 120%;
-            height: 120%;
-            overflow: hidden;
-            align-items: center;
-            justify-content: center;
-            label{
-                border-radius: 12px;
-                padding: 12px;
-                left: 16;
-                bottom: 8;
-                position: relative;
-                align-self: flex-end;
-                font-family: "Pixel";
-                font-size: 48px;
-            }
-            img{
-                border-radius: 12px;
-                border: 2px solid white;
-            }
-        }
-    
-    </style>
-    
-    <div id="loading_screen">
-        <div class="view-container">
-            <img id="loading_gif" src="images/loading.gif">
-            <label>loading</label>
+    <viewport-begin>photos</viewport-begin>
+    <div id="app-container">
+        <div id="topbar">
+            <a id="logo" href="home"><img src="images/logo.png"></a>
+            <a href="about">about meeee!</a>
+            <a href="photos">photos</a>
+            <a href="cool_websites">cool websites</a>
+            <!-- <a href="msg">send a msg</a> -->
         </div>
-       
+        <div id="app-viewport"> </div>
     </div>
-
-    <app class="border shadow">
-
-        <app_content>
-
-        </app_content>
-
-        <topbar class="topbar_main ">
-            <button link="/title.html">home</button>
-            <button link="/about.html">about me</button>
-            <button link="/pictures.html">pics</button>
-            <button link="/projects.html">programming</button>
-            <button link="/guestboard.html">guestboard</button>
-            <!-- <button id="visitors">hey!</button> -->
-            <!-- <button id="btn_cat">meow</button> -->
-
-        </topbar>
-
-    </app>
-
-    <!-- global effects -->
-    <svg style="width: 0px; height: 0px" id="warp_svg">
-        <filter id="warp">
-            <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="0.2" result="waves">
-            </feTurbulence>
-            <feColorMatrix in="waves" type="hueRotate">
-                <animate attributeName="values" values="0;360" dur="1.5s" repeatCount="indefinite"></animate>
-            </feColorMatrix>
-            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="15" in="SourceGraphic">
-            </feDisplacementMap>
-        </filter>
-    </svg>
-
-    <svg style="width: 0px; height: 0px">
-        <filter id="button_warp">
-            <feTurbulence type="fractalNoise" baseFrequency="1.003" numOctaves="0.2" result="waves">
-            </feTurbulence>
-            <feColorMatrix in="waves" type="hueRotate">
-                <animate attributeName="values" values="0;360" dur="2s" repeatCount="indefinite"></animate>
-            </feColorMatrix>
-            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="8" in="SourceGraphic">
-            </feDisplacementMap>
-        </filter>
-    </svg>
-
+    <!-- body will be the viewport for the views -->
+    <div id='hidden_views'></div>
     <script type="importmap">
         {
             "imports": {
@@ -106,14 +26,8 @@
             }
         }
     </script>
-    <script>var exports = {}; history.scrollRestoration = 'manual';</script>
-    <script type="module" src="js/pages/index.js"></script>
-
-    <!-- 100% privacy-first analytics -->
-    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""
-            referrerpolicy="no-referrer-when-downgrade" /></noscript>
-
+    <script src="index.js"></script>
+    
 </body>
 
 </html>

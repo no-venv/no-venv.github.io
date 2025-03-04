@@ -1,0 +1,9 @@
+#app-cool{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 32px;
+    a{
+        color: white;
+    }
+}

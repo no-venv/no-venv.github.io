@@ -1,0 +1,27 @@
+@property --x1 {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: true
+}
+
+#app-home{
+    z-index: -199;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 50%;
+        height: 50%;
+        object-fit:cover;
+        border-radius: 16px;
+        border: 8px solid ;
+        border-radius: 16px;
+        /* filter: url(#warp); */
+        box-shadow: 12px 12px 1px rgba(0, 0, 0, 0.375);
+    }
+
+}
+
+

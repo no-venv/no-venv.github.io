@@ -1,14 +1,21 @@
 {
   "name": "no-venv.github.io",
   "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/no-venv/no-venv.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/no-venv/no-venv.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/no-venv/no-venv.github.io.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "build": "cd ts && npx tsc; esbuild js/index.js --bundle --outfile=../index.js --allow-overwrite",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@tweenjs/tween.js": "^25.0.0"
   }
 }
