@@ -108,8 +108,13 @@
 (max-height: 850px) {
     #app-about {
         overflow: auto;
-
+        display: flex;
+        flex-direction: column;
+        scroll-snap-type: y mandatory;
         >* {
+            font-size: 35;
+
+            scroll-snap-align: center;
             aspect-ratio: 1;
         }
     }
