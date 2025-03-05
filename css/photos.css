@@ -2,9 +2,10 @@
     height: 100%;
 
     box-shadow: 5px 5px rgba(0, 0, 0, 0.281) !important;
-    border: #ffed96 8px solid;
+    background-color: #35cb97  !important;
+    border: #62ff89 8px solid;
     border-radius: 16px;
-    background: #ffb566 !important;
+    /* background: #ffb566 !important; */
     display: flex;
     flex-direction: column;
     *{

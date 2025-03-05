@@ -4,7 +4,8 @@
 @import url('about.css');
 @import url("photos.css");
 @import url("cool_websites.css");
-viewport-begin{
+
+viewport-begin {
     display: none;
 }
 
@@ -15,10 +16,12 @@ viewport-begin{
     height: 850px;
     gap: 14px;
 }
-#app-viewport{
+
+#app-viewport {
     height: 100%;
 }
-#hidden_views{
+
+#hidden_views {
     display: none;
 }
 
@@ -33,7 +36,16 @@ body {
     display: flex;
     height: 100%;
     overflow: hidden;
+
 }
+
+@media screen and (max-width: 850px), (max-height: 850px) {
+    #app-container {
+        width: 95% !important;
+        height: 95% !important;
+    }
+}
+
 
 * {
     font-family: "Syne";

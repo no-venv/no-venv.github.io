@@ -22,6 +22,7 @@
 
 .topbar-selected {
     filter: invert();
+    box-shadow: 2px 2px rgba(255, 255, 255, 0.453);
     background-color: black;
     border: solid 8px black;
 }

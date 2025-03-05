@@ -4,7 +4,7 @@
     gap: 16px;
     font-size: 24px;
 
-    a {
+    a {        
         display: flex;
         flex-direction: column;
         grid-template-columns: 1fr;
@@ -15,7 +15,6 @@
         background: #ffed96;
         color: black;
         text-decoration: none;
-
         height: 120px;
     }
 
