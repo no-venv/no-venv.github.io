@@ -104,8 +104,7 @@
 
 }
 
-@media screen and (max-width: 850px),
-(max-height: 850px) {
+@media screen and (max-width: 850px) {
     #app-about {
         overflow: auto;
         display: flex;
@@ -120,4 +119,10 @@
     }
 
 
+}
+
+@media screen and (max-height: 850px) {
+    #app-about {
+        overflow: auto;
+    }
 }

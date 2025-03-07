@@ -1,9 +1,3 @@
-@property --x1 {
-    syntax: '<integer>';
-    initial-value: 0;
-    inherits: true
-}
-
 #app-home{
     z-index: -199;
     height: 100%;
