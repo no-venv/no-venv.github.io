@@ -2,8 +2,8 @@
     height: 100%;
 
     box-shadow: 5px 5px rgba(0, 0, 0, 0.281) !important;
-    background-color: #35cb97  !important;
-    border: #62ff89 8px solid;
+    background-color: var(--dark-green)  !important;
+    border: var(--green) 8px solid;
     border-radius: 16px;
     /* background: #ffb566 !important; */
     display: flex;

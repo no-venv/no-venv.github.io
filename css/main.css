@@ -4,6 +4,7 @@
 @import url('about.css');
 @import url("photos.css");
 @import url("cool_websites.css");
+@import url("themes.css");
 
 viewport-begin {
     display: none;
