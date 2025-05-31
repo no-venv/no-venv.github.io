@@ -78,8 +78,8 @@ function animate_text_init() {
     })
 }
 export let about_app = new View("about", function (self) {
-    //start_mapbox()
     start_clock()
+    // start_mapbox()
 
     self.on_visibility = function (bool) {
         console.log(bool)
