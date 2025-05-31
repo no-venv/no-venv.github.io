@@ -1,0 +1,41 @@
+#app-home {
+    * {
+        overflow-wrap: anywhere;
+    }
+
+    position: relative;
+    /* box-sizing: border-box; */
+    column-count: 3;
+    column-gap: 0;
+    width: 100%;
+    height: 100%;
+
+    .guestboard-template {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+
+        vertical-align: top;
+
+        /* max-height: 300px; */
+    }
+
+    #guestboard-floating-input {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        top: 89%;
+        left: 50%;
+        transform: translate(-50%,-90%);
+        position:absolute;
+    }
+
+    a {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.453);
+    }
+
+}

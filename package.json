@@ -15,7 +15,12 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "build": "cd ts && npx tsc; esbuild js/index.js --bundle --outfile=../index.js --allow-overwrite",
+    "build": "bash build.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tweenjs/tween.js": "^25.0.0",
+    "gsap": "^3.13.0",
+    "mapbox-gl": "^3.12.0"
   }
 }

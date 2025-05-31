@@ -1,0 +1,48 @@
+.flickr-embed{
+    height: 100%;
+
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.281) !important;
+    background-color: fff !important;
+    border: fff 0px solid;
+    border-radius: 0px;
+    /* background: #ffb566 !important; */
+    display: flex;
+    flex-direction: column;
+    *{
+        color: black !important;
+    }
+   
+}
+.flickr-embed-footer{
+    display: none !important;
+}
+.flickr-embed-photo{
+    width: 100% !important;
+    overflow: hidden;
+    height: 100% !important;
+    border-radius: 0px;
+    .slide{
+        height: 100% !important;
+    }
+    img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+.curation-header{
+    display: none !important;
+}
+.branding{
+    svg{
+        fill: black !important;
+    }
+}
+.flickr-embed-photo{
+    align-self: center;
+}
+
+#app-photos{
+    /* display: flex; */
+    height: 100%;
+    align-items: center;
+}

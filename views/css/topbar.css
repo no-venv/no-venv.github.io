@@ -1,0 +1,45 @@
+#topbar {
+    display: flex;
+    /* z-index: 1; */
+    align-items: center;
+    /* backdrop-filter: blur(12px); */
+    gap: 16px;
+
+    a {
+        font-size: 22px;
+        color: var(--color8);
+        border-radius: 0px;
+        text-decoration: none;
+        font-weight: bold;
+
+        /* text-shadow: 1px 1px rgb(0, 0, 0); */
+        * {
+            mix-blend-mode: color-dodge;
+            color: var(--color8);
+        }
+    }
+
+    ;
+
+    #logo {
+        font-family: "soopafre" !important;
+        color: var(--color7);
+        border: none !important;
+        align-self: flex-start;
+    }
+
+}
+
+.topbar-selected {
+    color: var(--color1);
+
+    * {
+        mix-blend-mode: normal !important;
+        color: var(--color1) !important;
+    }
+
+    /* box-shadow: 2px 2px rgb(0, 0, 0); */
+    /* background-color:white; */
+    /* padding-bottom: 2px; */
+    /* border-bottom: solid var(--color1) 4px; */
+}

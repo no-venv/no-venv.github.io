@@ -1,0 +1,36 @@
+#app-cool {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 24px;
+    p {
+        /* position: absolute; */
+        mix-blend-mode: luminosity;
+        color: var(--color1)
+    
+    }
+    a {        
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        border: var(--yellow) 8px solid;
+        border-radius: 16px;
+        background:var(--yellow);
+        color: black;
+        text-decoration: none;
+        height: 120px;
+    }
+
+    img {
+        mix-blend-mode: luminosity;
+
+        position: relative;
+        border-radius: 8px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        /* aspect-ratio: 5.575;   */
+    }
+
+}

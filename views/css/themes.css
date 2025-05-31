@@ -1,0 +1,27 @@
+/* https://lospec.com/palette-list/scaled-and-icy
+https://lospec.com/palette-list/golden-haze */
+.site-theme {
+    --color1 : #fff3a5;
+    --color2 : #f4e063;
+    --color3 : #de923a;
+    --color4 : #a05611;
+    --color5 : #532b0b;
+    --color6 : #2d1604;
+    --color7 : #f9a4cb;
+    --color8 : #93d1de;
+   
+    background-image: url("/assets/images/home/wallpaper/w1.jpg") !important;
+    background-size:cover;
+    background-position: center;
+    *{
+        color : var(--color1)
+    }
+    /* a {
+        color: var(--white);
+    } */
+
+    .flickr-embed{
+        background-color: var(--white) !important;
+        border: var(--white);
+    }
+}

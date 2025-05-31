@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Ropa+Sans:ital@0;1&family=Syne:wght@400..800&display=swap');
+
+viewport-begin {
+    display: none;
+}
+
+#app-container {
+    box-shadow: 0px 0px 48px  rgba(0, 0, 0, 0.333);
+    padding: 16px;
+    box-sizing: border-box;
+    border: solid 1px rgba(0, 0, 0, .2);
+    background-position: center;
+    image-rendering: crisp-edges;
+    background-image: url("/assets/images/home/wallpaper/w1blur.png");
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: 850px;
+    gap: 14px;
+}
+
+#app-intro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 199;
+    background-color: var(--dark-blue);
+}
+
+#app-viewport {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    >* {
+        flex-shrink: 0;
+        width: 100%;
+    }
+}
+
+#hidden_views {
+    display: none;
+}
+
+iframe {
+    border: none;
+}
+
+body {
+    align-items: center;
+    /* background-color: #000 !important; */
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+button {
+    border: none;
+    padding: 8px;
+    /* border: 8px solid white; */
+    font-weight: bold;
+    background-color: white;
+}
+
+@media screen and (max-width: 850px),
+(max-height: 850px) {
+    #app-container {
+        width: 95% !important;
+        height: 95% !important;
+    }
+}
+
+@font-face {
+    font-family: soopafre;
+    src: url("/assets/fonts/soopafresh/soopafre.ttf");
+}
+
+@font-face {
+    font-family: sf;
+    src: url("/assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF");
+}
+
+* {
+    color: var(--color7);
+
+    font-family: "sf";
+    margin: 0;
+}
+
+
+.pad {
+    box-sizing: border-box;
+    /* padding: 0 0 0 0; */
+}
+
+.info-outline {
+    /* max-width: 320px; */
+    padding: 16px;
+    border: 2px solid var(--color2);
+}
+
+
+.info-filled {
+    padding: 16px;
+    background-color: var(--color2);
+    color: var(--color6) !important;
+}
