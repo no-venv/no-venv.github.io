@@ -1,20 +1,61 @@
 <div id="app-home">
-    <!-- <div>
-        <h2>welcome to venvitter</h2>
-        <p>an anonymous, twitter clone </p>
-    </div> -->
-    <!-- <div id="guestboard-view">
-    </div> -->
-    <h2>hi, guestboard coming soon</h2>
-    <!-- <div class="info-outline guestboard-template">
-        <h2>from the venv</h2>
-        <p>hello!</p>
+
+    <div id="gif-overlay" class="hidden round blur-noise">
+        <div id="gif-topbar">
+            <input id="gif-query" placeholder="search for gif">
+            <button id="tenor-close" class="round button-1-aspect">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button>
+        </div>
+        <div id="gif-result">
+
+        </div>
     </div>
 
+    <div id="error" class="hidden round blur-noise">
+        <h2>oops! 😭</h2>
+        <p>error</p>
+        <button class="round">close</button>
+    </div>
 
-    <div id="guestboard-floating-input">
-        <input id="guestboard-username">
-        <input id="guestboard-msg">
-        <button>post</button>
-    </div> -->
+    <div id="guestboard-main">
+
+    </div>
+
+    <div id="guestboard-input" class="round">
+        <div id="video-attachment" class="hidden">
+            <button id="video-attachment-close">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button>
+
+            <video id="video-attachment-preview">
+
+            </video>
+        </div>
+
+        <input placeholder="your username" id="guestboard-username" maxlength="10">
+        <label id="guestboard-username-count" class="message-count">0/10</label>
+        <input placeholder="your message" id="guestboard-msg" maxlength="80">
+        <label id="guestboard-message-count" class="message-count">0/80</label>
+        <button id="guestboard-gif-button" class="round button-1-aspect">
+            <span class="material-symbols-outlined">
+                gif_box
+            </span>
+        </button>
+        <button id="guestboard-send-button" class="round button-1-aspect">
+            <span class="material-symbols-outlined">
+                send
+            </span>
+        </button>
+    </div>
+    <div id="guestboard-message-templete" class="guestboard-message" hidden>
+        <p class="message-content">
+            <!-- <b class="username-content"> </b> -->
+        </p>
+        <video class="video-content round" src="" autoplay loop></video>
+    </div>
 </div>

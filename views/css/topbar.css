@@ -10,17 +10,12 @@
         color: var(--color8);
         border-radius: 0px;
         text-decoration: none;
-        font-weight: bold;
-
         /* text-shadow: 1px 1px rgb(0, 0, 0); */
         * {
             mix-blend-mode: color-dodge;
             color: var(--color8);
         }
     }
-
-    ;
-
     #logo {
         font-family: "soopafre" !important;
         color: var(--color7);

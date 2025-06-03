@@ -12,7 +12,10 @@ const DEFAULT_VIEW = document.querySelector("viewport-begin")
 
 gsap.registerPlugin(ScrollToPlugin, SplitText)
 init_topbar()
-load().then(function () {
-    show_view(DEFAULT_VIEW?.textContent as string)
-})
+window.onload = function () {
+    load().then(function () {
+        show_view(DEFAULT_VIEW?.textContent as string)
+    })
+}
+
 init_cursor_trail("assets/images/cursor/cursor2.png", 1 / 8)

@@ -1,33 +1,162 @@
 #app-home {
+    position: relative;
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    input {
+        color: white;
+        background: none;
+        border: none;
+        height: 100%;
+    }
+
     * {
         overflow-wrap: anywhere;
     }
 
-    position: relative;
-    /* box-sizing: border-box; */
-    column-count: 3;
-    column-gap: 0;
-    width: 100%;
-    height: 100%;
-
-    .guestboard-template {
-        display: inline-block;
+    #error {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-direction: column;
         width: 100%;
-        box-sizing: border-box;
+        height: 100%;
+        position: absolute;
 
-        vertical-align: top;
-
-        /* max-height: 300px; */
     }
 
-    #guestboard-floating-input {
+    #gif-overlay {
+        z-index: 2;
         display: flex;
-        flex-direction: column;
         gap: 8px;
-        top: 89%;
-        left: 50%;
-        transform: translate(-50%,-90%);
-        position:absolute;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        #gif-result {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            button {
+                video {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                width: 200px;
+                height: 200px;
+                max-width: 200px;
+                max-height: 200px;
+            }
+
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+        #gif-topbar {
+            box-sizing: border-box;
+
+            /* height: 40; */
+            /* background-color: var(--color8); */
+
+            input {
+                height: auto;
+                width: 100%;
+            }
+
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    #guestboard-main {
+        align-self: center;
+        height: 150%;
+        width: 96%;
+        overflow-y: scroll;
+    }
+
+    .guestboard-message {
+
+        /* display: flex; */
+        font-weight: bold;
+        font-size: 18px;
+
+        video {
+            width: 100px;
+            height: 100px;
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: cover;
+        }
+
+        gap: 8px;
+        width: 100%;
+    }
+
+    .owner-message {
+        p {
+            text-shadow: 0px 0px 8px var(--color7);
+            color: var(--color7);
+            mix-blend-mode: hard-light;
+        }
+    }
+
+    #guestboard-input {
+        display: flex;
+        gap: 4px;
+        padding: 4px;
+
+        #video-attachment {
+
+            border: 1px solid rgba(0, 0, 0, 0.453);
+            background-color: aliceblue;
+            position: absolute;
+            max-width: 64px;
+            max-height: 64px;
+            width: 64px;
+            height: 64px;
+            min-width: 64px;
+            transform: translateY(-100%) translateY(-8px) translateX(-1px);
+
+            video {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+            button {
+                background-color: rgba(0, 0, 0, 0.453);
+                position: absolute;
+                left: 100%;
+                transform: translateX(-100%);
+            }
+        }
+
+        .message-count {
+            aspect-ratio: 1.2;
+            /* max-width: 32px; */
+            align-content: center;
+            text-align: center;
+        }
+
+        #guestboard-username {
+            max-width: 128px;
+        }
+
+        #guestboard-msg {
+            width: 100%;
+        }
+
     }
 
     a {

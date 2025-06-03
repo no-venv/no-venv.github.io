@@ -1,6 +1,7 @@
 import { View } from "../view.js"
-const LOCALHOST = window.location.host == "127.0.0.1"
-const GUESTBOARD_URI = LOCALHOST ? "127.0.0.1:8080" : ""
+import { Guestboard } from "./modules/home/guestboard.js"
+
 export let home_app = new View("home",function(){
+    let guestboard_class = new Guestboard()
     console.log("hello!")
 })

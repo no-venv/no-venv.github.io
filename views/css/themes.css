@@ -13,9 +13,7 @@ https://lospec.com/palette-list/golden-haze */
     background-image: url("/assets/images/home/wallpaper/w1.jpg") !important;
     background-size:cover;
     background-position: center;
-    *{
-        color : var(--color1)
-    }
+  
     /* a {
         color: var(--white);
     } */

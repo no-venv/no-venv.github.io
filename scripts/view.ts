@@ -52,13 +52,6 @@ export async function load() {
         let div_container = document.createElement("div")
         div_container.id = v.id
         div_container.innerHTML = htm
-        // let scripts = div_container.querySelectorAll(`script`)
-        // scripts.forEach(function (v) {
-        //     let script_elm = document.createElement("script")
-        //     script_elm.src = v.src
-        //     v.parentElement?.appendChild(script_elm)
-        // })
-        // console.log(scripts)
         HIDDEN_VIEWS.appendChild(div_container)
     }
 

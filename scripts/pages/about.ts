@@ -1,10 +1,10 @@
-import { Map } from "mapbox-gl";
 import { View } from "../view.js";
-import { begin_spin_globe } from "./modules/about/spin_globe.js";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
-// import gsap from "gsap";
-// import "cesium/Build/Cesium/Widgets/widgets.css";
+type Animations = {
+    [key: string]: GSAPTween
+}
+let animation_store: Animations = {}
 let should_animate_text = true
 
 function is_elm_in_viewport(elm_id: string, change: (show: boolean) => void) {
@@ -25,16 +25,7 @@ function is_elm_in_viewport(elm_id: string, change: (show: boolean) => void) {
     observer.observe(elm)
     return observer
 }
-function start_mapbox() {
-    const mapbox = new Map({
-        container: "where-i-live",
-        accessToken: "pk.eyJ1Ijoibm92ZW52IiwiYSI6ImNtYXJndnpjZTAwaHoyanB2YXBxNGxqenkifQ.Ho1cr2hOABIeNO6wMJIuuQ"
-    })
-    mapbox.on("load", function () {
-        mapbox.resize()
-        begin_spin_globe(mapbox)
-    })
-}
+
 function start_clock() {
     const ABOUT_ME_CLOCK = document.getElementById("clock-time") as HTMLElement
     function clock() {
@@ -50,41 +41,38 @@ function gsap_split_words(elm_id: string) {
     if (!element) {
         return
     }
-    if (element.classList.contains("ignore_split_words")) {
-        return;
-    }
     let split = SplitText.create(`#${elm_id}`, {
-        type: "chars,words,lines"
+        type: "words"
     })
-    gsap.from(split.words, {
+    return gsap.from(split.words, {
         y: -100,
         opacity: 0,
         rotation: "random(-80, 80)",
         duration: 0.5,
         ease: "back",
-        stagger: 0.15
+        stagger: 0.15,
+        paused: true
     })
-    element.classList.add("ignore_split_words")
+        .progress(0)
+
 }
 function animate_title() {
     gsap_split_words("intro_t1")
 }
 function animate_text_init() {
-
+    let animation = gsap_split_words("where-i-live-p1")
     is_elm_in_viewport("where-i-live", function (show) {
         if (show) {
-            gsap_split_words("where-i-live-p1")
+            animation?.play()
         }
     })
 }
 export let about_app = new View("about", function (self) {
     start_clock()
-    // start_mapbox()
-
+    let title_animation = gsap_split_words("intro_t1")
     self.on_visibility = function (bool) {
-        console.log(bool)
         if (bool) {
-            animate_title()
+            title_animation?.play()
         }
     }
     animate_text_init()
