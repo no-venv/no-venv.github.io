@@ -152,6 +152,11 @@
         height: 100%;
         gap: 12px;
         display: grid;
+
+        @media (orientation: portrait) {
+            grid-template-columns: unset !important;
+        }
+
         grid-template-columns: 1fr 1fr;
         /* flex-direction: column; */
         justify-content: center;
