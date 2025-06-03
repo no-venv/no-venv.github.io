@@ -72,8 +72,14 @@ input {
     padding: 12px;
 }
 
-@media screen and (max-width: 850px),
-(max-height: 850px) {
+@media (orientation: portrait) {
+    #app-container {
+        width: 95% !important;
+        height: 95% !important;
+    }
+}
+
+@media screen and (max-width: 850px), (max-height: 850px) {
     #app-container {
         width: 95% !important;
         height: 95% !important;
@@ -90,6 +96,22 @@ input {
     src: url("/assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF");
 }
 
+@font-face {
+    font-family: keyboard;
+    src: url("/assets/fonts//input_fonts/keyboard/kenney_input_keyboard_&_mouse.ttf")
+}
+
+@font-face {
+    font-family: touch;
+    src: url("/assets/fonts//input_fonts/touch/kenney_input_touch.ttf")
+}
+
+.touch-font{
+    font-family: touch;
+}
+.keyboard-font {
+    font-family: keyboard;
+}
 * {
     color: var(--color1);
     font-family: "sf";
@@ -128,7 +150,7 @@ b {
 .info-outline {
     /* max-width: 320px; */
     padding: 16px;
-    border: 1px solid var(--color2);
+    border: 1px solid var(--color7);
 }
 
 .info-filled {
@@ -162,7 +184,7 @@ b {
     background-image: url("/assets/images/noise/texture.png");
 }
 
-.button-1-aspect{
+.button-1-aspect {
     aspect-ratio: 1;
 }
 

@@ -69,9 +69,11 @@ function animate_text_init() {
 }
 export let about_app = new View("about", function (self) {
     start_clock()
+    let about_view_elm = document.getElementById("app-about") as HTMLElement
     let title_animation = gsap_split_words("intro_t1")
     self.on_visibility = function (bool) {
         if (bool) {
+            about_view_elm.focus()
             title_animation?.play()
         }
     }
