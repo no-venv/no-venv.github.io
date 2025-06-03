@@ -1,4 +1,6 @@
+import { ErrorPopup } from "./error.js"
 import { TenorSearch } from "./tenor.js"
+
 const LOCALHOST = window.location.hostname == "127.0.0.1"
 const GUESTBOARD_URI = LOCALHOST ? "http://127.0.0.1:8080" : "https://venvsstuff.share.zrok.io"
 window.auth_guestboard_token = ""
@@ -13,6 +15,7 @@ type GuestboardResponse = [
 export class Guestboard {
     guestboard_main = document.getElementById("guestboard-main") as HTMLElement
     guestboard_message_templete = document.getElementById("guestboard-message-templete") as HTMLElement
+    error_popup = new ErrorPopup()
     // video_attachment_remove_button = document.getElementById("")
     public send_message(username: string, message: string, gif_url: string) {
         let self = this
@@ -36,9 +39,17 @@ export class Guestboard {
                     owner_key: window.auth_guestboard_token
                 }
             )
-        }).then(function () {
+        }).then(function (response) {
+            if (!response.ok) {
+                return Promise.reject(response)
+            }
             self.update_messages()
+        }).catch(function (response) {
+            response.text().then(function (err: string) {
+                self.error_popup.show(err)
+            })
         })
+
     }
     public update_messages() {
         let self = this
@@ -47,34 +58,40 @@ export class Guestboard {
                 "skip_zrok_interstitial": "true"
             }
         }).then(function (response) {
+            if (!response.ok) {
+                return Promise.reject(response)
+            }
             return response.json()
-        })
-            .then(function (json: GuestboardResponse) {
-                self.guestboard_main.innerHTML = ""
-                json.forEach(function (message) {
-                    let message_content = self.guestboard_message_templete.querySelector(".message-content") as HTMLElement
-                    let video_content = self.guestboard_message_templete.querySelector(".video-content") as HTMLVideoElement
-                    message_content.innerText = `${message.is_owner ? "the real venv" : message.username}: ${message.msg}`
+        }).then(function (json: GuestboardResponse) {
+            self.guestboard_main.innerHTML = ""
+            json.forEach(function (message) {
+                let message_content = self.guestboard_message_templete.querySelector(".message-content") as HTMLElement
+                let video_content = self.guestboard_message_templete.querySelector(".video-content") as HTMLVideoElement
+                message_content.innerText = `${message.is_owner ? "the real venv" : message.username}: ${message.msg}`
 
-                    if (message.gif_id != "") {
-                        video_content.src = `https://media.tenor.com/${message.gif_id}`
-                        video_content.classList.remove("hidden")
-                    } else {
-                        video_content.classList.add("hidden")
-                    }
-                    let message_instance = self.guestboard_message_templete.cloneNode(true)
-                    let container = document.createElement("div")
-                    container.appendChild(message_instance)
-                    if (message.is_owner) {
-                        container.classList.add("owner-message")
-                    }
-                    {
-                        let message_instance = container.querySelector(".guestboard-message") as HTMLElement
-                        message_instance.hidden = false
-                    }
-                    self.guestboard_main.appendChild(container)
-                })
+                if (message.gif_id != "") {
+                    video_content.src = `https://media.tenor.com/${message.gif_id}`
+                    video_content.classList.remove("hidden")
+                } else {
+                    video_content.classList.add("hidden")
+                }
+                let message_instance = self.guestboard_message_templete.cloneNode(true)
+                let container = document.createElement("div")
+                container.appendChild(message_instance)
+                if (message.is_owner) {
+                    container.classList.add("owner-message")
+                }
+                {
+                    let message_instance = container.querySelector(".guestboard-message") as HTMLElement
+                    message_instance.hidden = false
+                }
+                self.guestboard_main.appendChild(container)
             })
+        }).catch(function (response) {
+            response.text().then(function (err: string) {
+                self.error_popup.show(err)
+            })
+        })
     }
     constructor() {
         let self = this
