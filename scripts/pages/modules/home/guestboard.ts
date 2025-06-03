@@ -25,6 +25,7 @@ export class Guestboard {
         fetch(GUESTBOARD_URI + "/add", {
             method: "POST",
             headers: {
+                "skip_zrok_interstitial": "true",
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(
@@ -41,7 +42,11 @@ export class Guestboard {
     }
     public update_messages() {
         let self = this
-        fetch(GUESTBOARD_URI).then(function (response) {
+        fetch(GUESTBOARD_URI, {
+            headers: {
+                "skip_zrok_interstitial": "true"
+            }
+        }).then(function (response) {
             return response.json()
         })
             .then(function (json: GuestboardResponse) {
