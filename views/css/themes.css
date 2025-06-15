@@ -7,10 +7,10 @@ https://lospec.com/palette-list/golden-haze */
     --color4 : #a05611;
     --color5 : #532b0b;
     --color6 : #2d1604;
-    --color7 : #f9a4cb;
-    --color8 : #93d1de;
+    --color7 : #000000;
+    --color8 : #010101;
    
-    background-image: url("/assets/images/home/wallpaper/w1.jpg") !important;
+    background-image: url("/assets/images/home/wallpaper/backgroundyellow.png") !important;
     background-size:cover;
     background-position: center;
   

@@ -12,8 +12,8 @@
         text-decoration: none;
         /* text-shadow: 1px 1px rgb(0, 0, 0); */
         * {
-            mix-blend-mode: color-dodge;
-            color: var(--color8);
+            /* mix-blend-mode: color-dodge; */
+            color: var(--color7);
         }
     }
     #logo {
@@ -29,8 +29,9 @@
     color: var(--color1);
 
     * {
-        mix-blend-mode: normal !important;
-        color: var(--color1) !important;
+        filter: invert();
+        /* mix-blend-mode: normal !important; */
+        /* color: var(--color1) !important; */
     }
 
     /* box-shadow: 2px 2px rgb(0, 0, 0); */
