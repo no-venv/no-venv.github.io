@@ -74,6 +74,7 @@ export let about_app = new View("about", function (self) {
     self.on_visibility = function (bool) {
         if (bool) {
             about_view_elm.focus()
+            about_view_elm.click()
             title_animation?.play()
         }
     }

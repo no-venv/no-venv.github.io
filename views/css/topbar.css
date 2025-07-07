@@ -29,7 +29,7 @@
     color: var(--color1);
 
     * {
-        filter: invert();
+          color: var(--color2) !important;
         /* mix-blend-mode: normal !important; */
         /* color: var(--color1) !important; */
     }
