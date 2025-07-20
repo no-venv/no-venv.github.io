@@ -1,0 +1,72 @@
+@import url("fontdef.css");
+.hidden {
+    display: none !important;
+}
+*{
+    font-family: "Gonserrat";
+    margin: 0;
+}
+
+#start{
+    width: 100%;
+    height: 100%;
+}
+
+#actual-game{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+}
+
+#cat-boss-info{
+    display: flex;
+    flex-direction: column;
+    gap : 8px;
+    label {
+       color: white;
+    }
+    >div{
+        gap: 8px;
+        display: flex;
+    }
+    video{
+        height: 100%;
+        width: 100%;
+    }
+    height: 250px;
+    width: 250px;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform:  translateY(-5%)  translateX(-50%);
+}
+
+#hp-bar{
+    background-color: yellow;
+    width: 100%;
+}
+
+#textbox-overlay{
+    display: flex;
+    gap: 8px;
+    *{
+        color : white
+    };
+    video {
+        height: 100%;
+    }; 
+    >div{
+        display: flex;
+        flex-direction: column;
+        gap: 8px
+    }
+    position: fixed;
+    top: 100%;
+    transform: translateY(-100%);
+    width: 100%;
+    height: 100px;
+    background-color: black;
+}
