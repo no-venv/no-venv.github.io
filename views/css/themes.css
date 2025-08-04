@@ -2,13 +2,13 @@
 https://lospec.com/palette-list/golden-haze */
 .site-theme {
     --color1 : #fff3a5;
-    --color2 : #20ff94;
+    --color2 : #a008f4;
     --color3 : #de923a;
     --color4 : #a05611;
     --color5 : #532b0b;
     --color6 : #2d1604;
-    --color7 : #fff;
-    --color8 : #fff;
+    --color7 : #000;
+    --color8 : #000;
    
     background-image: url("/assets/images/home/wallpaper/backgroundyellow.png") !important;
     background-size:cover;
