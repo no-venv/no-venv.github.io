@@ -1,6 +1,9 @@
 import { View } from "../view.js";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
+import Swiper from "swiper";
+import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper/modules';
+
 type Animations = {
     [key: string]: GSAPTween
 }
@@ -69,6 +72,7 @@ function animate_text_init() {
 }
 export let about_app = new View("about", function (self) {
     start_clock()
+
     let about_view_elm = document.getElementById("app-about") as HTMLElement
     let title_animation = gsap_split_words("intro_t1")
     self.on_visibility = function (bool) {
@@ -78,6 +82,24 @@ export let about_app = new View("about", function (self) {
             title_animation?.play()
         }
     }
+    new Swiper(".swiper-about", {
+        modules: [Mousewheel, Navigation, Keyboard, Pagination],
+        direction: "vertical",
+        mousewheel: true,
+        keyboard: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: true,
+
+        },
+    })
+    // new Swiper(".swiper-hobbies", {
+    //     modules: [Mousewheel, Navigation, Keyboard, Pagination],
+    //     direction: "horizontal",
+    //     mousewheel: true,
+    //     keyboard: true,
+    // })
     animate_text_init()
 
 })

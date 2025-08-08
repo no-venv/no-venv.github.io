@@ -14,13 +14,13 @@
 #about-topbar {
     transform: translate(-50%);
     display: flex;
+    flex-direction: column;
     gap: 8px;
     left: 50%;
     padding: 16px;
     height: 24px !important;
     position: absolute !important;
     z-index: 2;
-    backdrop-filter: blur(2px);
     /* >div{
         width: 100%;
         display: flex;
@@ -31,13 +31,18 @@
 
 #app-about {
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
+    /* overflow: auto;
     scroll-snap-type: y mandatory;
-
-    >* {
+     */
+    --swiper-pagination-color : #fff3a5;
+    --swiper-pagination-bullet-size : 12;
+    --swiper-pagination-bullet-inactive-color : #fff;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    .swiper-wrapper{
         height: 100%;
         position: relative;
-        scroll-snap-align: start;
+        /* scroll-snap-align: start; */
     }
 
 }
@@ -137,39 +142,34 @@
 
 }
 
-#hobbies {
-    overflow: scroll;
+#hobbies{
     display: flex;
     flex-direction: column;
-    gap: 4px;
-
-    >div {
-        display: flex;
-        height: 100%;
+    gap: 12px;
+    .hobbies1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
     }
-
-    #hobby-container {
-        height: 100%;
-        gap: 12px;
-        display: grid;
-
-        @media (orientation: portrait) {
-            grid-template-columns: unset !important;
-        }
-
-        grid-template-columns: 1fr 1fr;
-        /* flex-direction: column; */
-        justify-content: center;
-        /* align-items: center; */
-    }
-
-    #hobby-programming {
+    
+    #programming-hobby-container{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 8px;
+        >*{
+            padding: 6px;
+            border: 1px solid var(--color7);
+        }
+        /* >*{
+            border: 1px solid white;
+        } */
     }
 
 }
+
+
+
 
 
 #socials {
