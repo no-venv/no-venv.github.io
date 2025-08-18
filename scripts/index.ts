@@ -5,6 +5,7 @@ import "./pages/home.js";
 import "./pages/about.js";
 import "./pages/photos.js";
 import "./pages/cool_websites.js";
+import "./pages/guestbook.js";
 import { init_topbar } from "./modules/topbar.js";
 import { load, show_view } from "./view.js";
 import { init_cursor_trail } from "./modules/CursorTrail.js";
