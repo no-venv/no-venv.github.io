@@ -8,7 +8,7 @@ https://lospec.com/palette-list/golden-haze */
     --color5: #532b0b;
     --color6: #2d1604;
     --color7: #000;
-    --color8: #000;
+    --color8: #fff;
 
     background-image: linear-gradient(#e8ebf0 2px, transparent 2px), linear-gradient(to right, #e8ebf0 2px, transparent 2px);
     background-size: 37px 37px;

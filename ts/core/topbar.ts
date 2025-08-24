@@ -15,7 +15,6 @@ function highlight_toggle(element: HTMLElement) {
 
 function init_topbar_a_element(href: string) {
     let elm = document.getElementById(`topbar-${href}`) as HTMLElement
-    console.log(elm)
     elm.onclick = function (evt) {
         evt.preventDefault()
         highlight_toggle(elm)
@@ -62,6 +61,14 @@ export function add_to_topbar(href: string) {
     // TOPBAR_HTML.innerHTML += `<a id="topbar-${href}" href=${href}>${href}</a>`
     init_topbar_a_element(href)
 
+}
+
+export function select_topbar(href: string) {
+    let elm = document.getElementById(`topbar-${href}`) as HTMLElement
+    if (!elm.onclick){
+        return;
+    }
+    elm.onclick(new MouseEvent("click"))
 }
 // export function init_topbar() {
 //     let topbar_hyperlink = document.querySelectorAll("a")

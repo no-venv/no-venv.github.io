@@ -1,5 +1,5 @@
 import gsap from "gsap"
-import { add_to_topbar } from "./topbar.js";
+import { add_to_topbar, select_topbar } from "./topbar.js";
 type fetch_request = {
     html_promise: Promise<Response>;
     // css_promise: Promise<Response>;
@@ -62,6 +62,7 @@ export async function load() {
         views[v.id].onload()
     }
     show_view(starting_view_id)
+    select_topbar(starting_view_id)
     return true
 }
 

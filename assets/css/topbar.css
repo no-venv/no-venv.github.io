@@ -6,11 +6,11 @@
     align-items: center;
     /* background: ; */
     /* backdrop-filter: blur(12px); */
-    gap: 8px;
+    gap: 2px;
 
     a {
         font-size: 18px;
-        color: var(--color8);
+        color: var(--color7);
         background-color: #e8ebf0;
         border-radius: 8px;
         padding: 4px;
@@ -19,7 +19,7 @@
         /* text-shadow: 1px 1px rgb(0, 0, 0); */
         * {
             /* mix-blend-mode: color-dodge; */
-            color: var(--color8);
+            color: var(--color7);
         }
     }
 
@@ -37,12 +37,12 @@
 }
 
 .topbar-selected {
-    color: var(--color1);
+    color: var(--color8);
     background: linear-gradient(to right,#F15BB5,#FEE440,#00F5D4) !important;
     /* background-color: #FEE440 !important; */
 
     * {
-        color: var(--color7) !important;
+        color: var(--color8) !important;
         /* mix-blend-mode: normal !important; */
         /* color: var(--color1) !important; */
     }
