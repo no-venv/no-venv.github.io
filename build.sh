@@ -1,5 +1,3 @@
-cd scripts;
-npx tsc;
-esbuild js/index.js --bundle --minify --outfile=../index.js --allow-overwrite;
-rm -r js
+cd ts;
+esbuild index.ts --bundle --minify --outfile=../index.js --allow-overwrite;
 cd ..;

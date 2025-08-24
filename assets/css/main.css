@@ -1,0 +1,255 @@
+viewport-begin {
+    display: none;
+}
+
+#app-container {
+    /* padding: 16px; */
+    box-sizing: border-box;
+    /* border-left: solid 3px #7ad0bb;
+    border-top: solid 3px #d085a8; */
+
+    /* border: solid 1px rgba(0, 0, 0, .2); */
+    background-position: center;
+    image-rendering: crisp-edges;
+    /* background-image: url("/assets/images/home/wallpaper/f1blur.png"); */
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: 850px;
+    gap: 0px;
+}
+
+#app-intro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 199;
+    background-color: var(--dark-blue);
+}
+
+#app-viewport {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 4px;
+
+    >* {
+        flex-shrink: 0;
+        width: 100%;
+    }
+}
+
+#line1 {
+    position: fixed;
+    background-color: #F15BB5;
+    width: 100%;
+    right: 0;
+    height: 2px;
+    /* top : -100px; */
+}
+
+#line2 {
+    position: fixed;
+    background-color: 00F5D4;
+    height: 100%;
+    /* right: 0; */
+    top: 0;
+    width: 2px;
+    /* top : -100px; */
+}
+
+#circle {
+    box-shadow: 0 0 0 1px red;
+    z-index: 101;
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    transform: translateX(-5px) translateY(-6px);
+    /* background-color: black; */
+    outline: 2px dashed white;
+    border-radius: 128px;
+}
+
+#crosshair {
+    z-index: 100;
+    position: fixed;
+    height: 20px;
+    width: 20px;
+    color: black;
+    aspect-ratio: 1;
+    --c: linear-gradient(#000 0 0) 50%;
+    background:
+        var(--c)/34% 10% space no-repeat,
+        var(--c)/10% 34% no-repeat space;
+    /* border-left: 20px solid black;
+    border-right: 20px solid black; */
+    transform: translateY(-9px) translateX(-9px);
+}
+
+.blur {
+    /* background-color: rgba(0, 0, 0, 0) !important; */
+    backdrop-filter: blur(8px)
+}
+
+/* #crosshair::after,
+#crosshair::before {
+    content: "";
+    width: 2px;
+    height: 20px;
+    background: black;
+    position: absolute;
+    left: 13px;
+}
+
+#crosshair::before {
+    top: -24px;
+}
+
+#crosshair::after {
+    top: 8px;
+} */
+
+#hidden_views {
+    display: none;
+}
+
+iframe {
+    border: none;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+button {
+    color: var(--color8);
+
+    * {
+        color: var(--color8)
+    }
+
+    background-color: var(--color7);
+    border: none;
+    border-radius: 16px;
+    padding: 8px;
+    font-weight: bold;
+}
+
+input {
+    padding: 12px;
+}
+
+@media (orientation: portrait) {
+    #app-container {
+        width: 95% !important;
+        height: 95% !important;
+    }
+}
+
+@media screen and (max-width: 850px),
+(max-height: 850px) {
+    #app-container {
+        width: 95% !important;
+        height: 95% !important;
+    }
+}
+
+.touch-font {
+    font-family: touch;
+}
+
+.keyboard-font {
+    font-family: keyboard;
+}
+
+* {
+    color: var(--color7);
+    font-family: "sf";
+    margin: 0;
+}
+
+p,
+h1,
+h4,
+b {
+    mix-blend-mode: luminosity;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background: var(--color7);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color2);
+}
+
+.pad {
+    box-sizing: border-box;
+    /* padding: 0 0 0 0; */
+}
+
+.info-outline {
+    /* max-width: 320px; */
+    padding: 16px;
+    border: 1px solid var(--color7);
+}
+
+.info-filled {
+    padding: 16px;
+    background-color: var(--color2);
+    color: var(--color6) !important;
+}
+
+.hide-scrollbar {
+    overflow-x: hidden !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.round {
+    border-radius: 8px 8px 8px 8px;
+}
+
+.shadow {
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.413);
+}
+
+.border {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.blur-noise {
+    backdrop-filter: blur(4px);
+    background-image: url("/assets/images/noise/texture.png");
+}
+
+.button-1-aspect {
+    aspect-ratio: 1;
+}
+
+input {
+    mix-blend-mode: luminosity;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: var(--color1);
+    font-weight: bold;
+}

@@ -1,0 +1,54 @@
+#topbar {
+    margin: 4px;
+
+    display: flex;
+    /* z-index: 1; */
+    align-items: center;
+    /* background: ; */
+    /* backdrop-filter: blur(12px); */
+    gap: 8px;
+
+    a {
+        font-size: 18px;
+        color: var(--color8);
+        background-color: #e8ebf0;
+        border-radius: 8px;
+        padding: 4px;
+        text-decoration: none;
+
+        /* text-shadow: 1px 1px rgb(0, 0, 0); */
+        * {
+            /* mix-blend-mode: color-dodge; */
+            color: var(--color8);
+        }
+    }
+
+    a:hover {
+        background-color: #FEE440;
+    }
+
+    #logo {
+        font-family: "soopafre" !important;
+        color: var(--color8);
+        border: none !important;
+        align-self: flex-start;
+    }
+
+}
+
+.topbar-selected {
+    color: var(--color1);
+    background: linear-gradient(to right,#F15BB5,#FEE440,#00F5D4) !important;
+    /* background-color: #FEE440 !important; */
+
+    * {
+        color: var(--color7) !important;
+        /* mix-blend-mode: normal !important; */
+        /* color: var(--color1) !important; */
+    }
+
+    /* box-shadow: 2px 2px rgb(0, 0, 0); */
+    /* background-color:white; */
+    /* padding-bottom: 2px; */
+    /* border-bottom: solid var(--color1) 4px; */
+}

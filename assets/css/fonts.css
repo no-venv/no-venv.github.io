@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Ropa+Sans:ital@0;1&family=Syne:wght@400..800&display=swap');
+
+@font-face {
+    font-family: soopafre;
+    src: url("/assets/fonts/soopafresh/soopafre.ttf");
+}
+
+@font-face {
+    font-family: sf;
+    src: url("/assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF");
+}
+
+@font-face {
+    font-family: sketart;
+    src: url("/assets/fonts/urban_sketart/UrbanSketart.ttf");
+}
+
+@font-face {
+    font-family: keyboard;
+    src: url("/assets/fonts//input_fonts/keyboard/kenney_input_keyboard_&_mouse.ttf")
+}
+
+@font-face {
+    font-family: touch;
+    src: url("/assets/fonts//input_fonts/touch/kenney_input_touch.ttf")
+}

@@ -1,0 +1,30 @@
+#app-cool {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 24px;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        border: var(--yellow) 8px solid;
+        border-radius: 16px;
+        background: var(--yellow);
+        text-decoration: none;
+        height: 120px;
+        max-height: 120px;
+    }
+
+    img {
+        mix-blend-mode: luminosity;
+        position: relative;
+        border-radius: 8px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: 96px;
+        flex-grow: 1;
+        aspect-ratio: 5.575;  
+    }
+
+}

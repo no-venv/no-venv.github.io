@@ -7,13 +7,10 @@
     https://lospec.com/palette-list/aero16 -->
     <base href="./">
     <meta name="viewport" content="width=device-width, initial-scale=0.8" />
-    <link rel="stylesheet" href="views/css/main.css" />
-    <link rel="stylesheet" href="views/css/topbar.css" />
-    <link rel="stylesheet" href="views/css/home.css" />
-    <link rel="stylesheet" href="views/css/about.css" />
-    <link rel="stylesheet" href="views/css/photos.css" />
-    <link rel="stylesheet" href="views/css/cool_websites.css" />
-    <link rel="stylesheet" href="views/css/themes.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/topbar.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet"
@@ -22,22 +19,29 @@
 </head>
 
 <body class="site-theme">
-    <viewport-begin>about</viewport-begin>
+
     <div id="app-intro" style="display: none;">
         meow
     </div>
-    <div id="app-container" class="round shadow">
+
+    <div id="app-container" class="">
+        <div id="crosshair"></div>
+        <div id="circle"></div>
+        <div id="line1"> </div>
+        <div id="line2"> </div>
+
         <div id="topbar">
+            <!--         
             <a id="logo" href="about">
                 venv
-                <!-- <img src="assets/images/logo.png"> -->
+                <img src="assets/images/logo.png">
             </a>
-            <!-- <a id="topbar-about" href="about">about me</a> -->
+            <a id="topbar-about" href="about">about me</a>
             <a id="topbar-photos" href="photos">photos</a>
             <a id="topbar-cool-websites" href="cool_websites">kewl websites</a>
             <a id="topbar-guestbook" href="guestbook">guestbook</a>
-            <!-- <a id="tb4" href="guestboard">guestboard</a> -->
-            <!-- <a href="msg">send a msg</a> -->
+            <a id="tb4" href="guestboard">guestboard</a>
+            <a href="msg">send a msg</a> -->
         </div>
         <div id="app-viewport" class="hide-scrollbar">
 
