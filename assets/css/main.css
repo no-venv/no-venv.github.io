@@ -43,7 +43,7 @@ viewport-begin {
 
 #line1 {
     position: fixed;
-    background-color: #F15BB5;
+    background-color: #d8f3dc00;
     width: 100%;
     right: 0;
     height: 2px;
@@ -52,7 +52,7 @@ viewport-begin {
 
 #line2 {
     position: fixed;
-    background-color: 00F5D4;
+    background-color: #d8f3dc00;
     height: 100%;
     /* right: 0; */
     top: 0;
@@ -211,7 +211,7 @@ b {
 
 .info-filled {
     padding: 16px;
-    background-color: var(--color2);
+    background-color: #3C096C;
     color: var(--color6) !important;
 }
 

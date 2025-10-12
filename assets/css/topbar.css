@@ -1,4 +1,4 @@
-#topbar {
+#topbar, .topbar {
     margin: 4px;
 
     display: flex;
@@ -10,8 +10,8 @@
 
     a {
         font-size: 18px;
-        color: var(--color7);
-        background-color: #e8ebf0;
+        color: #fff;
+        background-color: #3C096C;
         border-radius: 8px;
         padding: 4px;
         text-decoration: none;
@@ -19,12 +19,19 @@
         /* text-shadow: 1px 1px rgb(0, 0, 0); */
         * {
             /* mix-blend-mode: color-dodge; */
-            color: var(--color7);
+            color: #fff;
         }
     }
 
     a:hover {
-        background-color: #FEE440;
+        background-color: #C77DFF;
+
+        * {
+            color: #fff;
+            /* mix-blend-mode: normal !important; */
+            /* color: var(--color1) !important; */
+        }
+
     }
 
     #logo {
@@ -38,7 +45,7 @@
 
 .topbar-selected {
     color: var(--color8);
-    background: linear-gradient(to right,#F15BB5,#FEE440,#00F5D4) !important;
+    background: #C77DFF !important;
     /* background-color: #FEE440 !important; */
 
     * {
