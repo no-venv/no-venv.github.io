@@ -32,13 +32,13 @@ function init_topbar_a_element(href: string) {
     let split = SplitText.create(`#${elm.id}`, { type: "chars" })
     let animation = gsap.to(split.chars, {
         // y : 100,
-        keyframes: [{ y: -15 }, { y: 0, ease: "bounce.out" }],
+        keyframes: [{ y: -15 }, { y: 0, ease: "bounce.inout" }],
         paused: true,
         // yoyo : true,
         // repeat: -1,
-        duration: 0.5,
+        duration: 0.3,
         delay: 0,
-        stagger: 0.5 / split.chars.length,
+        stagger: 0.3 / split.chars.length,
         // ease:"bounce.inOut"
     })
     elm.onmouseenter = function (evt) {
