@@ -29,26 +29,26 @@ function init_topbar_a_element(href: string) {
     // let generated_elm_id = `${elm.getAttribute("href") as string}_gsap`
     //  elm.id = generated_elm_id
     //console.log(`#${generated_elm_id}`)
-    let split = SplitText.create(`#${elm.id}`, { type: "chars" })
-    let animation = gsap.to(split.chars, {
-        // y : 100,
-        keyframes: [{ y: -15 }, { y: 0, ease: "bounce.inout" }],
-        paused: true,
-        // yoyo : true,
-        // repeat: -1,
-        duration: 0.3,
-        delay: 0,
-        stagger: 0.3 / split.chars.length,
-        // ease:"bounce.inOut"
-    })
-    elm.onmouseenter = function (evt) {
-        console.log("play anim")
-        console.log(evt)
-        animation.restart()
-    }
-    elm.onmouseleave = function () {
-        // animation.revert()
-    }
+    // let split = SplitText.create(`#${elm.id}`, { type: "chars" })
+    // let animation = gsap.to(split.chars, {
+    //     // y : 100,
+    //     keyframes: [{ y: -15 }, { y: 0, ease: "bounce.inout" }],
+    //     paused: true,
+    //     // yoyo : true,
+    //     // repeat: -1,
+    //     duration: 0.3,
+    //     delay: 0,
+    //     stagger: 0.3 / split.chars.length,
+    //     // ease:"bounce.inOut"
+    // })
+    // elm.onmouseenter = function (evt) {
+    //     console.log("play anim")
+    //     console.log(evt)
+    //     animation.restart()
+    // }
+    // elm.onmouseleave = function () {
+    //     // animation.revert()
+    // }
 }
 
 export function add_to_topbar(href: string) {

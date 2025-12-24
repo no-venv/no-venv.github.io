@@ -11,6 +11,33 @@
     text-decoration: none;
 }
 
+.big_pad {
+    padding: 128px 128px 128px 128px;
+    box-sizing: border-box;
+}
+
+#intro-video-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+
+    >div {
+        display: none;
+        opacity: 30%;
+        padding: 8px;
+        z-index: 2;
+        position: absolute;
+    }
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    filter: brightness(60%);
+    object-fit: cover;
+}
+
 #about-topbar {
     transform: translate(-50%);
     display: flex;
@@ -40,9 +67,9 @@
     /* overflow: auto;
     scroll-snap-type: y mandatory;
      */
-    --swiper-pagination-color : #C77DFF;
+    --swiper-pagination-color : var(--primary);
     --swiper-pagination-bullet-size : 12;
-    --swiper-pagination-bullet-inactive-color : #3C096C;
+    --swiper-pagination-bullet-inactive-color :var(--text);
     --swiper-pagination-bullet-inactive-opacity: 1;
 
     .swiper-wrapper {
@@ -148,7 +175,7 @@
 
 }
 
-#hobbies-grid {
+.hobbies-grid {
     display: grid;
     gap: 16px;
     grid-template-columns: 2fr 2fr;
@@ -169,6 +196,12 @@
         background-repeat: no-repeat; */
     }
 
+}
+
+.bullet_p {
+    p::before {
+        content: "• ";
+    }
 }
 
 #hobbies {
@@ -210,7 +243,8 @@
 
 #socials {
     background-color: var(--white);
-    display: flex;
+    display: flex;        /* justify-content: center; */
+
     flex-direction: column;
     gap: 16px;
 
@@ -219,7 +253,7 @@
         height: 100%;
         flex-direction: column;
         gap: 8px;
-        /* justify-content: center; */
+        justify-content: center;
         align-self: center;
     }
 
@@ -234,9 +268,12 @@
     flex-direction: column;
     background-color: var(--dark-yellow);
     border-color: var(--yellow);
-    padding: 12px;#endtext_img {
-    object-fit: cover !important;
-}
+    padding: 12px;
+
+    #endtext_img {
+        object-fit: cover !important;
+    }
+
     grid-column: 1 / 3;
     grid-row: 4 / 6;
     text-align: center;

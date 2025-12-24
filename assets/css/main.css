@@ -10,7 +10,6 @@ viewport-begin {
 
     /* border: solid 1px rgba(0, 0, 0, .2); */
     background-position: center;
-    image-rendering: crisp-edges;
     /* background-image: url("/assets/images/home/wallpaper/f1blur.png"); */
     display: flex;
     flex-direction: column;
@@ -169,7 +168,7 @@ input {
 }
 
 * {
-    color: var(--color7);
+    color: var(--text);
     font-family: "sf";
     margin: 0;
 }
@@ -211,8 +210,8 @@ b {
 
 .info-filled {
     padding: 16px;
-    background-color: #3C096C;
-    color: var(--color6) !important;
+    background-color: var(--primary);
+    color: var(--text) !important;
 }
 
 .hide-scrollbar {

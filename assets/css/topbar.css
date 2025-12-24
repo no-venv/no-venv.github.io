@@ -6,12 +6,12 @@
     align-items: center;
     /* background: ; */
     /* backdrop-filter: blur(12px); */
-    gap: 2px;
-
+    gap: 8px;
+    /* justify-content: center; */
     a {
         font-size: 18px;
-        color: #fff;
-        background-color: #3C096C;
+        color: var(--text);
+        /* background-color: #3C096C; */
         border-radius: 8px;
         padding: 4px;
         text-decoration: none;
@@ -19,18 +19,12 @@
         /* text-shadow: 1px 1px rgb(0, 0, 0); */
         * {
             /* mix-blend-mode: color-dodge; */
-            color: #fff;
+            color: var(--text);
         }
     }
 
     a:hover {
-        background-color: #C77DFF;
-
-        * {
-            color: #fff;
-            /* mix-blend-mode: normal !important; */
-            /* color: var(--color1) !important; */
-        }
+        background-color:  var(--secondary);
 
     }
 
@@ -45,7 +39,7 @@
 
 .topbar-selected {
     color: var(--color8);
-    background: #C77DFF !important;
+    background: var(--primary) !important;
     /* background-color: #FEE440 !important; */
 
     * {

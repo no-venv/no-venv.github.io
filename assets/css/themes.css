@@ -1,18 +1,18 @@
 /* https://lospec.com/palette-list/scaled-and-icy
 https://lospec.com/palette-list/golden-haze */
 .site-theme {
-    --color1: #fff3a5;
-    --color2: #fff3a5;
-    --color3: #de923a;
-    --color4: #a05611;
-    --color5: #532b0b;
-    --color6: #2d1604;
-    --color7: #fff;
-    --color8: #fff;
+    /* e63946 */
+    /* FFF2EA */
+    --primary: #e63946;
+    --secondary: #f2ab37;
+    --text : #FFF2EA;
+    --background: #21181b;
+    --color7: #FFF2EA;
+    --color8: #FFF2EA;
 
-    background-image: linear-gradient(#3C096C 2px, transparent 2px), linear-gradient(to right, #3C096C 2px, transparent 2px);
+    background-image: linear-gradient(#fff2ea12 2px, transparent 1px), linear-gradient(to right, #fff2ea12 2px, transparent 1px);
     background-size: 37px 37px;
-    background-color: #10002B;
+    background-color: #21181b;
     background-position: center;
     /* background-image: url("/assets/images/home/wallpaper/f1.png") !important; */
     /* background-size:cover;

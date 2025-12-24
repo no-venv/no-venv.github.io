@@ -13,7 +13,15 @@
 
     <div class="swiper-wrapper">
         <div id="intro" class="swiper-slide">
-            <img class="wtf" src="/ts/apps/novenv/assets/images/about/renders_wireframe/welcome.png">
+            <div class="round" id="intro-video-container">
+                <div>
+                    <h4>
+                        jellyfish • made with godot engine
+                    </h4>
+                </div>
+                <video muted loop autoplay class="round" src="/ts/apps/novenv/assets/images/home/wallpaper.mp4"></video>
+            </div>
+            <img class="" src="/ts/apps/novenv/assets/images/logo2.png">
             <b>
                 <span id="mobile-inst">
                     <span class="touch-font">
@@ -35,22 +43,51 @@
             <!-- <a href="#where-i-live" class="next_button">next</a> -->
         </div>
 
-        <div id="where-i-live" class="round swiper-slide">
-            <video src="/ts/apps/novenv/assets/images/about/earth.mp4" autoplay muted loop></video>
-            <p id="where-i-live-p1">i live on this rock with water <br> (i think they call it earth) </p>
+        <div class="round swiper-slide big_pad">
+            <h1>about myself</h1>
+            <p>i don't have that much to say about myself, other than i like topics related to art and technology
+            </p>
+            <br>
+            <p>
+                im kinda also reserved but if you aren't insufferable i'll probably talk to you
+            </p>
+            <br>
+            <div class="hobbies-grid">
+                <div class="bullet_p">
+                    <h2>i like</h2>
+                    <p>cats</p>
+                    <p>fellow artists</p>
+                    <p>chocolate</p>
+                    <p>disassembling things</p>
+                </div>
+                <div class="bullet_p">
+                    <h2>i dislike</h2>
+                    <p>ai. im an artist so you can understand why</p>
+                    <p>annoying people</p>
+                    <p>assholes</p>
+                </div>
+            </div>
         </div>
 
+        <!-- 
+        <div id="where-i-live" class="round swiper-slide">
+            <video src="/ts/apps/noven"v/assets/images/about/earth.mp4" autoplay muted loop></video>
+            <p id="where-i-live-p1">i live on this rock with water <br> (i think they call it earth) </p>
+        </div> -->
+
         <div id="hobbies" class="swiper-slide">
-            <img class="wtf" src="/ts/apps/novenv/assets/images/about/renders_wireframe/Hobbies.png" height="10%">
+
+            <!-- <img class="wtf" src="/ts/apps/novenv/assets/images/about/renders_wireframe/Hobbies.png" height="10%"> -->
             <!-- <div class="topbar">
                 <a>3d art</a>
                 <a>programming</a>
                 <a>photography</a>
             </div> -->
 
-            <div id="hobbies-grid">
+            <h1>i like to do these stuff</h1>
+            <div class="hobbies-grid">
                 <div class="b_3d_art">
-                    <img class="wtf" src="/ts/apps/novenv/assets/images/about/renders_wireframe/Art.png">
+                    <img class="" src="/ts/apps/novenv/assets/images/about/renders_wireframe/Art.png">
                     <h1>3d art</h1>
                     <p>
                         yeah so i picked up blender around late 2024 since i wanna make cool shit
@@ -68,7 +105,7 @@
                 </div>
 
                 <div class="b_computer">
-                    <img class="wtf" src="/ts/apps/novenv/assets/images/about/renders_wireframe/computer.png">
+                    <img class="" src="/ts/apps/novenv/assets/images/about/renders_wireframe/computer.png">
 
                     <h1>programming</h1>
                     <p>i like to code and heres all of the languages that i know:</p>
@@ -76,15 +113,8 @@
                     <div id="programming-hobby-container">
                         <div class="round">
                             <p> <i class="devicon-lua-plain"></i>lua 🔥</p>
-
-                        </div>
-
-                        <div class="round">
-                            <p><i class="devicon-python-plain"></i>python 🤢</p>
-
                         </div>
                         <div class="round">
-
                             <p><i class="devicon-rust-original"></i>rust ❤️</p>
                         </div>
                         <div class="round">
@@ -93,27 +123,34 @@
                         <div class="round">
                             <p><i class="devicon-opengl-plain"></i>gdshader/glsl ❤️</p>
                         </div>
+                        <div class="round">
+                            <p><i class="devicon-python-plain"></i>python 🤢</p>
+                        </div>
+
                     </div>
 
                 </div>
 
                 <div>
-                    <img class="wtf" src="/ts/apps/novenv/assets/images/about/renders_wireframe/Camera.png">
+                    <img class="" src="/ts/apps/novenv/assets/images/about/renders_wireframe/Camera.png">
 
                     <h1>photography</h1>
                     <p> sometimes i go outside and i take photos of stuff i find interesting </p>
+
                 </div>
             </div>
 
         </div>
         <div id="socials" class="pad swiper-slide">
-            <img id="endtext_img" class="wtf" src="/ts/apps/novenv/assets/images/about/renders_wireframe/the End.png" height="96px">
+            <!-- <img id="endtext_img" class="wtf" src="/ts/apps/novenv/assets/images/about/renders_wireframe/the End.png" height="96px">
             <img id="endbal_img" class="wtf"
-                src="/ts/apps/novenv/assets/images/about/renders_wireframe/end_balloons.png" height="100%">
+                src="/ts/apps/novenv/assets/images/about/renders_wireframe/end_balloons.png" height="100%"> -->
             <!-- <h1>you can find venv here, here, here, here and here</h1> -->
             <div id="socials-container">
+                <h1>the end, here are my socials</h1>
+
                 <div id="clock">
-                    <p>i live in the Mountain Standard time zone, so my time is:</p>
+                    <p>oh and btw i live in the Mountain Standard time zone, so my time is:</p>
                     <h1 id="clock-time">00:00</h1>
                 </div>
                 <div class="info-filled round">
