@@ -12,7 +12,7 @@
 }
 
 .big_pad {
-    padding: 128px 128px 128px 128px;
+    padding: 64px 64px 64px 64px;
     box-sizing: border-box;
 }
 
@@ -23,8 +23,8 @@
     z-index: -2;
 
     >div {
-        display: none;
-        opacity: 30%;
+        /* display: none; */
+        opacity: 70%;
         padding: 8px;
         z-index: 2;
         position: absolute;
@@ -175,25 +175,32 @@ video {
 
 }
 
+.hobbies-400px {
+    >div {
+        height: 400px !important
+    }
+
+    ;
+}
+
 .hobbies-grid {
     display: grid;
     gap: 16px;
     grid-template-columns: 2fr 2fr;
 
     img {
-        height: 400px;
+        /* height: 400px; */
         position: absolute;
         opacity: 30%;
     }
 
     >div {
-        /* height: auto; */
-        height: 400px;
+        height: auto;
         position: relative;
 
-        /* aspect-ratio: 1;
+        /* aspect-ratio: 1; */
         background-size: contain;
-        background-repeat: no-repeat; */
+        background-repeat: no-repeat;
     }
 
 }
@@ -243,7 +250,8 @@ video {
 
 #socials {
     background-color: var(--white);
-    display: flex;        /* justify-content: center; */
+    display: flex;
+    /* justify-content: center; */
 
     flex-direction: column;
     gap: 16px;
