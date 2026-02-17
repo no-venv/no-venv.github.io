@@ -8,14 +8,23 @@
 #app-artstuff-inner {
     width: 100%;
     height: 100%;
+
+    div:not(#app-artstuff-overlay) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8;
+        align-content: flex-start;
+        box-sizing: border-box;
+    }
 }
 
 #app-artstuff-overlay {
     /* position: relative; */
     display: flex;
-    
-    flex-direction:  column-reverse;
+    flex-direction: column-reverse;
     gap: 8px;
+
     .art_img {
         /* position: absolute; */
 
@@ -26,18 +35,13 @@
 
 }
 
-#app-artstuff-description-container {
-    background-color: rgba(0,0,0,.5);
-    /* top: 80%; */
-    margin: 8px;
-    p{
-        text-align: center;
-        white-space: pre-line;
-    }
-    width: 100%;
-    height: 10%;
-    /* background-color: lin; */
+#app-artstuff-description {
+    text-align: center;
+    font-size: 18px;
+    text-align: center;
+    white-space: pre-line;
 }
+
 
 .art_img {
 

@@ -312,7 +312,10 @@ video {
     top: 30%;
 }
 
+* {
+    color: var(--text);
 
+}
 
 .wtf {
     filter: contrast(40%) brightness(100%) sepia(1000) hue-rotate(200deg);

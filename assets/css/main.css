@@ -176,7 +176,7 @@ p,
 h1,
 h4,
 b {
-    mix-blend-mode: luminosity;
+    /* mix-blend-mode: luminosity; */
 }
 
 ::-webkit-scrollbar {
