@@ -3,9 +3,10 @@ https://lospec.com/palette-list/golden-haze */
 .site-theme {
     /* e63946 */
     /* FFF2EA */
-    --primary: #ed75c5;
-    --secondary: #ff8960;
-    --text: #FFF2EA;
+    --primary: #bdff00;
+    --secondary: #bdff00;
+    --text: #ffffff;
+    --text-alt: #000000;
     --background: #21181b;
     --color7: #FFF2EA;
     --color8: #FFF2EA;

@@ -26,7 +26,8 @@ viewport-begin {
     background-color: var(--dark-blue);
 }
 
-#app-viewport ,.viewport {
+#app-viewport,
+.viewport {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -221,7 +222,8 @@ b {
     display: none !important;
 }
 
-.round , .art_img {
+.round,
+.art_img {
     border-radius: 8px 8px 8px 8px;
 }
 
@@ -251,3 +253,10 @@ input::placeholder {
     color: var(--color1);
     font-weight: bold;
 }
+
+p {
+    font-size: 18px;
+
+}
+
+

@@ -1,6 +1,6 @@
 import { NewView } from "../../../../core/view.js";
 
-NewView("art_stuff", {
+NewView("art", {
     on_visibility(visible) {
 
     },
