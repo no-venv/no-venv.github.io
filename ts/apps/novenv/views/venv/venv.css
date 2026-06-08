@@ -21,9 +21,11 @@
     height: 100%;
     position: absolute;
     z-index: -2;
-    video{
+
+    video {
         mix-blend-mode: luminosity;
     }
+
     >div {
         /* display: none; */
         opacity: 70%;
@@ -178,11 +180,9 @@ video {
 }
 
 .hobbies-400px {
-    >div {
-        height: 400px !important
-    }
-
-    ;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .hobbies-grid {
