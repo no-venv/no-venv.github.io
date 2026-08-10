@@ -3,16 +3,13 @@ https://lospec.com/palette-list/golden-haze */
 .site-theme {
     /* e63946 */
     /* FFF2EA */
-    --primary: #e5e8f4;
+    --primary: #7b7b7b99;
     --secondary: #6a75a0;
-    --text: #e5e8f4;
+    --text: #ffffff;
     --text-alt: #000000;
     --background: #21181b;
-    --color7: #FFF2EA;
-    --color8: #FFF2EA;
-    background-image: url("/ts/apps/novenv/assets/images/background.png");
-    background-size: cover;
-
+    --color7: #7b7b7b99;
+    --color8: #7b7b7b99;
     .flickr-embed {
         background-color: var(--white) !important;
         border: var(--white);

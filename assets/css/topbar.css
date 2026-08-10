@@ -1,9 +1,8 @@
 #topbar,
 .topbar {
-    margin: 4px;
-
     display: flex;
     /* z-index: 1; */
+    height: 32px !important;
     align-items: center;
     /* background: ; */
     /* backdrop-filter: blur(12px); */
