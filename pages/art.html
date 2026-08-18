@@ -6,9 +6,91 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/themes.css" />
     <style>
+        .topbar {
+            * {
+                display: inline-block;
+            }
+        }
+
         art_view {
             width: 100%;
             height: 100%;
+        }
+
+        #app-artstuff {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #app-artstuff-inner {
+            width: 100%;
+            height: 100%;
+
+            div:not(#app-artstuff-overlay) {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 8;
+                align-content: flex-start;
+                box-sizing: border-box;
+            }
+
+            * {
+                input[type="radio"] {
+                    display: block;
+                }
+
+            }
+        }
+
+        #app-artstuff-overlay {
+            /* position: relative; */
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 8px;
+
+            .art_img {
+                /* position: absolute; */
+
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: contain;
+            }
+
+        }
+
+        #app-artstuff-description {
+            text-align: center;
+            font-size: 18px;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+
+        .art_img {
+
+            width: 150px;
+            object-fit: cover;
+            aspect-ratio: 1;
+            height: 150px;
+        }
+
+        #renders {
+            input {
+                cursor: pointer;
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: inline-block !important;
+                width: 100px;
+                height: 70px;
+
+            }
+        }
+
+        #rust_crab {
+            background-image: url("/assets/art_stuff/completed/13.jpg");
         }
     </style>
 </head>
@@ -16,74 +98,100 @@
 <body>
 
     <div id="art_view" class="site-theme">
-
-        <input type="radio" name="art_options" id="renders" autocomplete="off" checked>
-        <input type="radio" name="art_options" id="logos" autocomplete="off">
-        <input type="radio" name="art_options" id="banner" autocomplete="off">
-        <input type="radio" name="art_options" id="vfx" autocomplete="off">
-        <input type="radio" name="art_options" id="scraps" autocomplete="off">
-
-        <div class="topbar">
-            <label for="renders" class="info-filled round"> renderz</label>
-            <label for="logos" class="info-filled round"> logoz</label>
-            <label for="banner" class="info-filled round"> bannerz</label>
-            <label for="vfx" class="info-filled round"> vfx</label>
-            <label for="scraps" class="info-filled round"> scrapz</label>
-        </div>
         
-        <!-- 
         <div id="app-artstuff-inner" class="viewport hide-scrollbar round">
             <div id="renders">
+                <a href="/assets/art_stuff/completed/13.jpg">
+                    <img class="art_img" alt="rust crab" src="/assets/art_stuff/completed/13.jpg">
+                </a>
 
-                <img class="art_img" alt="rust crab" src="/assets/art_stuff/13.jpg">
-                <img class="art_img" alt="one of my oc's for a future project im working on :)
+                <a href="/assets/art_stuff/completed/1.jpg">
+                    <img class="art_img" src="/assets/art_stuff/completed/1.jpg">
+                </a>
+                <a href="/assets/art_stuff/completed/2.jpg">
+                    <img class="art_img" src="/assets/art_stuff/completed/2.jpg">
+                </a>
+                <a href="/assets/art_stuff/completed/10.jpg">
+                    <img class="art_img" alt="" src="/assets/art_stuff/completed/10.jpg">
+                </a>
 
-            this was created in blender
-            " src="/assets/art_stuff/completed/1.jpg">
-                <img class="art_img" alt="2d from gorillaz
-            
-            this was created in blender
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/2.jpg">
-                <img class="art_img" alt="i made axolotl blobs, idk what else to say
-            
-            this was created in blender & godot engine (rendering)
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/10.jpg">
+                <a href="/assets/art_stuff/completed/12.mp4">
+                    <video class="art_img" alt="" src="/assets/art_stuff/completed/12.mp4"></video>
+                </a>
+                <a href="/assets/art_stuff/completed/11.jpg">
+                    <img class="art_img" src="/assets/art_stuff/completed/11.jpg">
 
-                <video class="art_img" alt="jellyfish
-            
-            this was created in blender & godot engine (rendering & animation with vertex shaders)
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/12.mp4"></video>
-                <img class="art_img" alt="house from the movie Up
-            
-            this was created in blender & godot engine (rendering)
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/11.jpg">
-                <img class="art_img" alt="emotional crosslights
-            
-            this was created in blender cycles
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/3.jpg">
-                <img class="art_img" alt="liminal space
-            
-            this was created in blender & godot engine (rendering)
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/4.jpg">
-                <img class="art_img" alt="liminal space
-            
-            this was created in blender cycles
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/8.jpg">
-                <img class="art_img" alt="rock
-            
-            this was created in blender & godot engine (rendering)
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/5.jpg">
-                <img class="art_img" alt="liminal space
-            
-            this was created in blender & godot engine (rendering)
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/6.jpg">
-                <img class="art_img" alt="soup
-            
-            this was created in blender & godot engine (rendering)
-            " src="ts/apps/novenv/assets/images/art_stuff/completed/9.jpg">
+                </a>
+                <a href="/assets/art_stuff/completed/3.jpg">
+                    <img class="art_img" alt="" src="/assets/art_stuff/completed/3.jpg">
+                </a>
+                <a href="/assets/art_stuff/completed/4.jpg">
+                    <img class="art_img" alt="" src="/assets/art_stuff/completed/4.jpg">
+                </a>
+                <a href="/assets/art_stuff/completed/8.jpg">
+                    <img class="art_img" alt=" " src="/assets/art_stuff/completed/8.jpg">
+                </a>
+                <a href="/assets/art_stuff/completed/5.jpg">
+                    <img class="art_img" alt="" src="/assets/art_stuff/completed/5.jpg">
+                </a>
+                <a href="/assets/art_stuff/completed/6.jpg">
+                    <img class="art_img" alt="" src="/assets/art_stuff/completed/6.jpg">
+                </a>
+                <a href="/assets/art_stuff/completed/9.jpg">
+                    <img class="art_img" alt="" src="/assets/art_stuff/completed/9.jpg">
+                </a>
+
+
+                <a href="/assets/art_stuff/scraps/1.jpg">
+                    <img class="art_img" alt="material test" src="/assets/art_stuff/scraps/1.jpg">
+                </a>
+
+                <a href="/assets/art_stuff/scraps/2.jpg">
+                    <img class="art_img" alt="unfinished samsung z fold" src="/assets/art_stuff/scraps/2.jpg">
+                </a>
+
+                <a href="/assets/art_stuff/scraps/3.jpg">
+                    <img class="art_img" alt="unfinished plankton" src="/assets/art_stuff/scraps/3.jpg">
+                </a>
+
+                <a href="/assets/art_stuff/scraps/4.jpg">
+                    <img class="art_img" alt="conjoined dogs" src="/assets/art_stuff/scraps/4.jpg">
+
+                </a>
+
+                <a href="/assets/art_stuff/scraps/7.jpg">
+                    <img class="art_img" alt="balloons" src="/assets/art_stuff/scraps/7.jpg">
+                </a>
+
+                <a href="/assets/art_stuff/scraps/8.jpg">
+                    <img class="art_img"
+                        alt="second iteration of my oc, later i remade the entire rig and model to be low poly and flexible"
+                        src="/assets/art_stuff/scraps/8.jpg">
+                </a>
+
+
+                <a href="/assets/art_stuff/scraps/5.jpg">
+                    <img class="art_img" alt="first iteration of my robot oc" src="/assets/art_stuff/scraps/5.jpg">
+                </a>
+                <a href="/assets/art_stuff/scraps/7.mp4">
+                    <video class="art_img" alt="eye rig" src="/assets/art_stuff/scraps/7.mp4"></video>
+
+                </a>
+
+                <a href="/assets/art_stuff/scraps/6.jpg">
+                    <img class="art_img" alt="fish" src="/assets/art_stuff/scraps/6.jpg">
+
+                </a>
+
+                <a href="/assets/art_stuff/banners/digtal_speech.png">
+                    <img alt="server banner for no text to speech.  made in blender & photopea (compositing)
+            " class="art_img" src="/assets/art_stuff/banners/digtal_speech.png">
+
+                </a>
+
 
             </div>
-            <div id="vfx">
+            <!-- <div id="vfx">
                 <video alt="wanted to experiment with godot's particle systems, made this thing idk" class="art_img"
                     src="ts/apps/novenv/assets/images/art_stuff/vfx/1.mp4"></video>
             </div>
@@ -102,25 +210,10 @@
                 <img alt="server banner for no text to speech. chosen for server logo and banner in march 2026. made in photopea
             " class="art_img" src="ts/apps/novenv/assets/images/art_stuff/banners/ntts.jpg">
 
-                <img alt="server banner for no text to speech.  made in blender & photopea (compositing)
-            " class="art_img" src="ts/apps/novenv/assets/images/art_stuff/banners/digtal_speech.png">
-
+          
             </div>
             <div id="scraps">
-                <img class="art_img" alt="material test" src="ts/apps/novenv/assets/images/art_stuff/scraps/1.jpg">
-                <img class="art_img" alt="unfinished samsung z fold"
-                    src="ts/apps/novenv/assets/images/art_stuff/scraps/2.jpg">
-                <img class="art_img" alt="unfinished plankton"
-                    src="ts/apps/novenv/assets/images/art_stuff/scraps/3.jpg">
-                <img class="art_img" alt="conjoined dogs" src="ts/apps/novenv/assets/images/art_stuff/scraps/4.jpg">
-                <img class="art_img" alt="first iteration of my robot oc"
-                    src="ts/apps/novenv/assets/images/art_stuff/scraps/5.jpg">
-                <img class="art_img" alt="fish" src="ts/apps/novenv/assets/images/art_stuff/scraps/6.jpg">
-                <video class="art_img" alt="eye rig" src="ts/apps/novenv/assets/images/art_stuff/scraps/7.mp4"></video>
-                <img class="art_img" alt="balloons" src="ts/apps/novenv/assets/images/art_stuff/scraps/7.jpg">
-                <img class="art_img"
-                    alt="second iteration of my oc, later i remade the entire rig and model to be low poly and flexible"
-                    src="ts/apps/novenv/assets/images/art_stuff/scraps/8.jpg">
+       
             </div>
             <div id="concept">
                 <img class="art_img" alt="concept for cartoon band"
@@ -128,12 +221,7 @@
 
 
             </div>
-            <div id="app-artstuff-overlay">
-                <p id="app-artstuff-description">text goes here</p>
-
-
-            </div>
-        </div> -->
+        </div>
 
     </div>
 

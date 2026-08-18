@@ -50,11 +50,12 @@
                 <h1>hi, i'm venv. i'm a <nb>non-binary</nb> programmer and 3d artist.</h1>
 
                 <br>
-                this website was made purely with html, css and iframes. my old system with typescript was
+                this website was made purely with html, css, and minimal javascript. my old system with typescript was
                 annoying to work with.
                 <br>
                 <br>
-                and yes this website is minimalist, there's no reason to add a billion  webdev trash to something that should be simple
+                and yes this website is minimalist, there's no reason to add a billion webdev trash to something that
+                should be simple
             </div>
 
 
@@ -69,8 +70,8 @@
             <label for="guestboard" class="sect-button info-filled round">
                 ...send a public message
             </label>
-            <label for="art_" class="sect-button info-filled round">
-                ...view my art (WORK IN PROGRESS CHECK MY BLUESKY FOR NOW)
+            <label for="art" class="sect-button info-filled round">
+                ...view my art
             </label>
             <label for="cool_sites" class="sect-button info-filled round">
                 ...check out some cool websites
@@ -86,6 +87,17 @@
 
         <iframe id="websites_view" class="view" src="pages/websites.html"></iframe>
     </div>
+
+    <script>
+        const back = document.getElementById("home")
+        const art_view = document.getElementById("art_view")
+        back.onclick = function (e) {
+            if (!art_view.contentWindow.location.href.includes("pages/art.html")) {
+                e.preventDefault()
+                art_view.contentWindow.history.back()
+            }
+        }
+    </script>
 </body>
 
 </html>
