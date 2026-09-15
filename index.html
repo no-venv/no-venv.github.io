@@ -23,6 +23,7 @@
     <meta name="kicya-site-verification" content="d79f0c2f597927278e1692036afc897b81b4e0ec8e77b3e51e47ecb7d1397db7">
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://u.widget.st/ar.js"></script>
     <!-- <link rel="stylesheet" href="assets/css/topbar.css" /> -->
     <link rel="stylesheet" href="assets/css/themes.css" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -40,23 +41,21 @@
         <input type="radio" name="options" id="guestboard" autocomplete="off">
         <input type="radio" name="options" id="art" autocomplete="off">
         <input type="radio" name="options" id="cool_sites" autocomplete="off">
+        <input type="radio" name="options" id="chat_view" autocomplete="off">
         <label id="back_button" for="home">
             <i class="bi bi-arrow-left-circle-fill"></i> back
         </label>
         <div id="home_view" class="view">
 
             <div class="view"></div>
-
+            <div id="status_float_container">
+                <div id="status_float" class="round speech-bubble">
+                    <ws-widget type="status" iid="12837"></ws-widget>
+                </div>
+                <img src="assets/background/websitelogo.png" style="width: 100%;height: 100%; object-fit: contain;">
+            </div>
             <div class="">
-                <h1>hi, i'm venv. i'm a <nb>non-binary</nb> programmer and 3d artist.</h1>
-
-                <br>
-                this website was made purely with html, css, and minimal javascript. my old system with typescript was
-                annoying to work with.
-                <br>
-                <br>
-                and yes this website is minimalist, there's no reason to add a billion webdev trash to something that
-                should be simple
+                <h1>hi, i'm venv. i'm a programmer and 3d artist.</h1>
             </div>
 
 
@@ -67,9 +66,11 @@
             <label for="about" class="sect-button info-filled round">
                 ...learn more about me
             </label>
-
+            <label for="chat_view" class="sect-button info-filled round">
+                ...say something in chat
+            </label>
             <label for="guestboard" class="sect-button info-filled round">
-                ...send a public message
+                ...add something in guestboard
             </label>
             <label for="art" class="sect-button info-filled round">
                 ...view my art
@@ -85,8 +86,9 @@
         <iframe id="about_view" class="view" src="pages/about.html"></iframe>
         <iframe id="guestboard_view" class="view" src="https://venv.atabook.org/"></iframe>
         <iframe id="art_view" class="view" src="pages/art.html"></iframe>
-
         <iframe id="websites_view" class="view" src="pages/websites.html"></iframe>
+        <iframe id="chat_view_if" class="view" src="pages/chat.html"></iframe>
+
     </div>
 
     <script>
