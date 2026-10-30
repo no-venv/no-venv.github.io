@@ -287,7 +287,6 @@ input[type="radio"] {
 
 #status_float {
     top: 0px;
-    left: 200px;
     width: 220px;
     height: 40px;
     position: absolute;
@@ -306,8 +305,8 @@ input[type="radio"] {
 .speech-bubble:after {
     content: '';
     position: absolute;
-    right: 2;
-    top: 50%;
+    right: 0;
+    top: 100%;
     width: 0;
     height: 0;
     border: 16px solid transparent;
@@ -315,4 +314,5 @@ input[type="radio"] {
     border-right: 0;
     margin-top: -16px;
     margin-right: -16px;
+    rotate: 45deg;
 }
