@@ -316,3 +316,11 @@ input[type="radio"] {
     margin-right: -16px;
     rotate: 45deg;
 }
+
+.sect-button{
+    img{
+       display: inline-block;
+       vertical-align: center;
+       height: 18px;
+    }
+}

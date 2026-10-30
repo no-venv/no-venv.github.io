@@ -3,13 +3,13 @@ https://lospec.com/palette-list/golden-haze */
 .site-theme {
     /* e63946 */
     /* FFF2EA */
-    --primary: #7b7b7b99;
-    --secondary: #6a75a0;
+    --primary: #ff510020;
+    --secondary: #ff5100;
     --text: #ffffff;
     --text-alt: #000000;
     --background: #21181b;
-    --color7: #7b7b7b99;
-    --color8: #7b7b7b99;
+    --color7: #ff5100;
+    --color8: #ff5100;
     .flickr-embed {
         background-color: var(--white) !important;
         border: var(--white);
